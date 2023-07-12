@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3771928191706446616}
   - component: {fileID: 3305290576471654711}
   m_Layer: 0
-  m_Name: PaintBall
+  m_Name: RedPaintBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ea2c55412d0b8e7468d9e0c723e13857, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintBrush: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-  textureA: {fileID: 0}
 --- !u!54 &3305290576471654711
 Rigidbody:
   m_ObjectHideFlags: 0

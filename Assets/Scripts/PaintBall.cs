@@ -6,6 +6,7 @@ public class PaintBall : MonoBehaviour
 {
     private float Speed;
     private Vector3 Direction;
+    private int Bounce;
 
     [Header("Shader")]
     [SerializeField] Texture2D PaintBrush;
@@ -14,18 +15,32 @@ public class PaintBall : MonoBehaviour
 /*    public Texture2D textureA;*/
     void Update()
     {
-        this.transform.position = (transform.position) + Direction * Speed * Time.deltaTime;
+        this.GetComponent<Rigidbody>().velocity = Direction * Speed * Time.deltaTime;
     }
 
-    public void Init(float speed, Vector3 direction)
+    public void Init(float speed, Vector3 direction, Vector3 position)
     {
+        this.transform.position = position;
         Speed = speed;
         Direction = direction.normalized;
+        Bounce = 0;
+    }
+    
+    public void SetBounce(int value)
+    {
+        Bounce = value;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == this || !collision.transform.CompareTag("Paintable")) return;
+
+        if(Bounce > 0)
+        {
+            Bounce--;
+            Rigidbody rb = this.GetComponent<Rigidbody>();
+            rb.velocity = Vector3.Reflect(rb.velocity, collision.contacts[0].normal);
+        }
 
         Ray ray = new Ray(collision.contacts[0].point, - collision.contacts[0].normal);
         if (Physics.Raycast(ray, out RaycastHit hit, 1 << LayerMask.NameToLayer("Paintable")))

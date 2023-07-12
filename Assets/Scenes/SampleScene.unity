@@ -1362,23 +1362,40 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
-  ChangePaint:
-    m_UseReference: 0
+  ChangePaintProperty:
+    m_UseReference: 1
     m_Action:
-      m_Name: Change Paint
+      m_Name: Change Paint Property
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 33a94ea3-f655-4648-8676-8d459b03a944
+      m_Id: 601f4d11-7713-4e10-8cc7-edcbeceec5cb
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  BounceProperty:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Bounce Property
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: befaf1c0-ce06-4c4d-a566-4aee7df27636
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   MaxChargeTime: 3
   BulletIncreaseSpeed: 5
   BulletBasicSpeed: 1
-  PaintBall: {fileID: 8493456430031930924, guid: 4e97542f43147a144ae2ad1690367d11,
-    type: 3}
+  CoolTime: 3
+  PaintBall:
+  - {fileID: 8493456430031930924, guid: 4e97542f43147a144ae2ad1690367d11, type: 3}
+  - {fileID: 8493456430031930924, guid: 507ffe49fea1bb642b9c59874bdf89ce, type: 3}
+  - {fileID: 8493456430031930924, guid: 5acba52cee8be934a8310146e88ea530, type: 3}
 --- !u!1 &1922954105
 GameObject:
   m_ObjectHideFlags: 0
