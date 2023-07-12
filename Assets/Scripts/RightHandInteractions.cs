@@ -49,10 +49,10 @@ public class RightHandInteractions : MonoBehaviour
             currentPaintIndex++;
         }
 
-        if (ChargeValue > 0.8f)
+        if (ChargeValue > 0.8f && ChargeTime == 0)
         {
             ChargeTime = Mathf.Clamp(ChargeTime += Time.deltaTime, 0, MaxChargeTime);
-            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], this.transform.position, this.transform.rotation).GetComponent<PaintBall>();
+            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count]).GetComponent<PaintBall>();
         }
         else if(BouncePropertyValue > 0.8f && ChargeTime != 0)
         {

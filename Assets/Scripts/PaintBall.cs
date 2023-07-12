@@ -40,7 +40,10 @@ public class PaintBall : MonoBehaviour
             Bounce--;
             Rigidbody rb = this.GetComponent<Rigidbody>();
             rb.velocity = Vector3.Reflect(rb.velocity, collision.contacts[0].normal);
+            return;
         }
+
+        Destroy(this.gameObject);
 
         Ray ray = new Ray(collision.contacts[0].point, - collision.contacts[0].normal);
         if (Physics.Raycast(ray, out RaycastHit hit, 1 << LayerMask.NameToLayer("Paintable")))
