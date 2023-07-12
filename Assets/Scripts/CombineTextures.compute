@@ -1,0 +1,31 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+RWTexture2D<float4> Result;
+Texture2D<float4> TextureA;
+Texture2D<float4> TextureB;
+
+float2 Position;
+
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    // TODO: insert actual code here!
+    float4 color = TextureB[id.xy];
+    int texSizeA_x; 
+    int texSizeB_x; 
+    int texSizeA_y; 
+    int texSizeB_y; 
+
+    TextureA.GetDimensions(texSizeA_x, texSizeA_y);
+    TextureB.GetDimensions(texSizeB_x, texSizeB_y);
+
+    int pixel_x = ((int)Position.x - texSizeB_x / 2) + id.x;
+    int pixel_y = ((int)Position.y - texSizeB_y / 2) + id.y;
+
+    if (color.a > 0.0f && pixel_x > 0 && pixel_x < texSizeA_x && pixel_y > 0 && pixel_y < texSizeA_y) {
+        Result[float2(pixel_x, pixel_y)] = color;
+    }
+
+}
