@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class RightHandInteractions : MonoBehaviour
 {
-    [Header("Actions")]
+    [Header("Right Hand Actions")]
     [SerializeField] InputActionProperty ShootProperty;
     [SerializeField] InputActionProperty ChangePaintProperty;
+
+    [Header("Left Hand Actions")]
     [SerializeField] InputActionProperty BounceProperty;
 
     [Header("Adjustments")]
@@ -17,21 +20,21 @@ public class RightHandInteractions : MonoBehaviour
     [SerializeField] float BulletBasicSpeed;
     [SerializeField] float CoolTime;
     private bool isCoolTime;
+    [SerializeField] int MaxBulletCount;
+    private int currentBulletCount;
 
     [Header("Paints")]
     [SerializeField]  List<GameObject> PaintBall;
     private int currentPaintIndex;
     
-
     PaintBall PaintBallInstance;
-
-
 
     void Start()
     {
-        ChargeTime = 0;
         isCoolTime = false;
+        ChargeTime = 0;
         currentPaintIndex = 0;
+        currentBulletCount = MaxBulletCount;
     }
 
     // Update is called once per frame
@@ -41,30 +44,34 @@ public class RightHandInteractions : MonoBehaviour
         float ChangePaintValue = ChangePaintProperty.action.ReadValue<float>();
         float BouncePropertyValue = BounceProperty.action.ReadValue<float>();
 
-        if (isCoolTime)
+        if (isCoolTime || currentBulletCount == 0)
             return;
 
         if (ChangePaintValue > 0.8f)
         {
             currentPaintIndex++;
         }
-
-        if (ChargeValue > 0.8f && ChargeTime == 0)
-        {
-            ChargeTime = Mathf.Clamp(ChargeTime += Time.deltaTime, 0, MaxChargeTime);
-            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count]).GetComponent<PaintBall>();
-        }
-        else if(BouncePropertyValue > 0.8f && ChargeTime != 0)
+        if(BouncePropertyValue > 0.8f && ChargeTime != 0)
         {
             PaintBallInstance.SetBounce(1);
         }
-        else if (ChargeValue < 0.1f && ChargeTime != 0)
+
+        if (ChargeValue > 0.8f && ChargeTime == 0)
+        {
+            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();
+        }
+        if (ChargeValue > 0.8f)
+        {
+            ChargeTime = Mathf.Clamp(ChargeTime += Time.deltaTime, 0, MaxChargeTime);
+        }
+        if (ChargeValue < 0.2f && ChargeTime != 0)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), this.transform.forward, this.transform.position);
+            currentBulletCount--;
             ChargeTime = 0;
+            PaintBallInstance = null;
             StartCoroutine(SetCoolTime());
         }
-      
     }
 
     IEnumerator SetCoolTime()

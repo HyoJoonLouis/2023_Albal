@@ -11,11 +11,12 @@ public class PaintBall : MonoBehaviour
     [Header("Shader")]
     [SerializeField] Texture2D PaintBrush;
 
+    [SerializeField] float decreaseSpeedAmount;
 
-/*    public Texture2D textureA;*/
-    void Update()
+    /*    public Texture2D textureA;*/
+    private void Start()
     {
-        this.GetComponent<Rigidbody>().velocity = Direction * Speed * Time.deltaTime;
+        Bounce = 0;
     }
 
     public void Init(float speed, Vector3 direction, Vector3 position)
@@ -23,7 +24,9 @@ public class PaintBall : MonoBehaviour
         this.transform.position = position;
         Speed = speed;
         Direction = direction.normalized;
-        Bounce = 0;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0, 0, 0);
+        rb.AddForce(Speed * Direction, ForceMode.Impulse);
     }
     
     public void SetBounce(int value)
@@ -33,36 +36,22 @@ public class PaintBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject == this || !collision.transform.CompareTag("Paintable")) return;
-
         if(Bounce > 0)
         {
             Bounce--;
             Rigidbody rb = this.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.Reflect(rb.velocity, collision.contacts[0].normal);
+            float speed = rb.velocity.magnitude;
+            Vector3 direction = Vector3.Reflect(rb.velocity.normalized, collision.contacts[0].normal);
+            rb.velocity = direction * speed * decreaseSpeedAmount;
             return;
         }
 
         Destroy(this.gameObject);
-
-        Ray ray = new Ray(collision.contacts[0].point, - collision.contacts[0].normal);
-        if (Physics.Raycast(ray, out RaycastHit hit, 1 << LayerMask.NameToLayer("Paintable")))
+        Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,1<<LayerMask.NameToLayer("Paintable")))
         {
             Debug.Log(hit.textureCoord);
             hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush);
-/*            Material hitMaterial = hit.transform.GetComponent<Renderer>().material;
-            textureA = hitMaterial.GetTexture("_MainTex") as Texture2D;
-            resultTexture = new RenderTexture(textureA.width, textureA.height, 1);
-            resultTexture.enableRandomWrite = true;
-            resultTexture.Create();
-
-            int kernalId = computeShader.FindKernel("CSMain");
-            computeShader.SetTexture(kernalId, "Result", resultTexture);
-            computeShader.SetTexture(kernalId, "TextureA", textureA);
-            computeShader.SetTexture(kernalId, "TextureB", Paint);
-            computeShader.SetVector("Position", new Vector2(hit.textureCoord.x * textureA.width, hit.textureCoord.y * textureA.height));
-            computeShader.Dispatch(kernalId, Paint.width / 8, Paint.height / 8, 1);
-            hitMaterial.SetTexture("_HitTex", resultTexture);*/
         }
     }
 }
