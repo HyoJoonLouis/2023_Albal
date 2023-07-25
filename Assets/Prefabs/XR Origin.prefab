@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 1175132644884910239}
   - component: {fileID: 1175132644884910236}
   - component: {fileID: 1175132644884910226}
+  - component: {fileID: 3457170341029305271}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -406,6 +407,66 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3457170341029305271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175132644884910237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d306d87a078f2d047be1162ada1b4528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootProperty:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Shoot Property
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 2a5eb36a-89e7-42d2-a437-e5bd253e97f2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  ChangePaintProperty:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Change Paint Property
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 601f4d11-7713-4e10-8cc7-edcbeceec5cb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  BounceProperty:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Bounce Property
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: befaf1c0-ce06-4c4d-a566-4aee7df27636
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  MaxChargeTime: 3
+  BulletIncreaseSpeed: 5
+  BulletBasicSpeed: 20
+  CoolTime: 1
+  MaxBulletCount: 100
+  PaintBall:
+  - {fileID: 8493456430031930924, guid: 4e97542f43147a144ae2ad1690367d11, type: 3}
+  - {fileID: 8493456430031930924, guid: 507ffe49fea1bb642b9c59874bdf89ce, type: 3}
+  - {fileID: 8493456430031930924, guid: 5acba52cee8be934a8310146e88ea530, type: 3}
 --- !u!1 &1175132646069530411
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +477,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1175132646069530410}
   - component: {fileID: 1175132646069530412}
-  - component: {fileID: 1175132646069530413}
   m_Layer: 0
   m_Name: Right Hand
   m_TagString: Untagged
@@ -631,66 +691,6 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1175132646069530413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175132646069530411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d306d87a078f2d047be1162ada1b4528, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootProperty:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Shoot Property
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 2a5eb36a-89e7-42d2-a437-e5bd253e97f2
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  ChangePaintProperty:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Change Paint Property
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 601f4d11-7713-4e10-8cc7-edcbeceec5cb
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  BounceProperty:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Bounce Property
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: befaf1c0-ce06-4c4d-a566-4aee7df27636
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  MaxChargeTime: 3
-  BulletIncreaseSpeed: 5
-  BulletBasicSpeed: 20
-  CoolTime: 1
-  MaxBulletCount: 0
-  PaintBall:
-  - {fileID: 8493456430031930924, guid: 4e97542f43147a144ae2ad1690367d11, type: 3}
-  - {fileID: 8493456430031930924, guid: 507ffe49fea1bb642b9c59874bdf89ce, type: 3}
-  - {fileID: 8493456430031930924, guid: 5acba52cee8be934a8310146e88ea530, type: 3}
 --- !u!1 &1175132646107522661
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,11 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RightHandInteractions : MonoBehaviour
+public class HandInteractions : MonoBehaviour
 {
     [Header("Right Hand Actions")]
+    [SerializeField] GameObject RightHand;
     [SerializeField] InputActionProperty ShootProperty;
     [SerializeField] InputActionProperty ChangePaintProperty;
+
 
     [Header("Left Hand Actions")]
     [SerializeField] InputActionProperty BounceProperty;
@@ -23,6 +25,12 @@ public class RightHandInteractions : MonoBehaviour
     [SerializeField] int MaxBulletCount;
     private int currentBulletCount;
 
+    [Header("Right Hand Shake")]
+    [SerializeField] float ShakeThreshold;
+    [SerializeField] int ShakeAmount;
+    Vector3 PreviousRightHandPosition;
+    int CountShake;
+
     [Header("Paints")]
     [SerializeField]  List<GameObject> PaintBall;
     private int currentPaintIndex;
@@ -35,6 +43,8 @@ public class RightHandInteractions : MonoBehaviour
         ChargeTime = 0;
         currentPaintIndex = 0;
         currentBulletCount = MaxBulletCount;
+        PreviousRightHandPosition = RightHand.transform.position;
+        CountShake = 0;
     }
 
     // Update is called once per frame
@@ -72,6 +82,25 @@ public class RightHandInteractions : MonoBehaviour
             PaintBallInstance = null;
             StartCoroutine(SetCoolTime());
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Vector3.Distance(RightHand.transform.position, PreviousRightHandPosition) >= ShakeThreshold)
+        {
+            CountShake++;
+            Debug.Log("Shaked");
+        }
+        else
+            CountShake = 0;
+        
+        if(CountShake > ShakeAmount)
+        {
+            Debug.Log("All Shaked");
+            CountShake = 0;
+            currentBulletCount = MaxBulletCount;
+        }
+        PreviousRightHandPosition = RightHand.transform.position;
     }
 
     IEnumerator SetCoolTime()
