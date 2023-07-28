@@ -37,6 +37,8 @@ public class HandInteractions : MonoBehaviour
     
     PaintBall PaintBallInstance;
 
+    int isTransparent;
+
     void Start()
     {
         isCoolTime = false;
@@ -45,6 +47,7 @@ public class HandInteractions : MonoBehaviour
         currentBulletCount = MaxBulletCount;
         PreviousRightHandPosition = RightHand.transform.position;
         CountShake = 0;
+        isTransparent = 0;
     }
 
     // Update is called once per frame
@@ -54,13 +57,18 @@ public class HandInteractions : MonoBehaviour
         float ChangePaintValue = ChangePaintProperty.action.ReadValue<float>();
         float BouncePropertyValue = BounceProperty.action.ReadValue<float>();
 
+        if (ChangePaintValue > 0.8f)
+        {
+            if(isTransparent == 0)
+                isTransparent = 1;
+            else
+                isTransparent = 0;
+            GameManager.PaintTransparent(isTransparent);
+        }
+
         if (isCoolTime || currentBulletCount == 0)
             return;
 
-        if (ChangePaintValue > 0.8f)
-        {
-            currentPaintIndex++;
-        }
         if(BouncePropertyValue > 0.8f && ChargeTime != 0)
         {
             PaintBallInstance.SetBounce(1);
@@ -76,7 +84,7 @@ public class HandInteractions : MonoBehaviour
         }
         if (ChargeValue < 0.2f && ChargeTime != 0)
         {
-            PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), this.transform.forward, this.transform.position);
+            PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), RightHand.transform.forward, RightHand.transform.position);
             currentBulletCount--;
             ChargeTime = 0;
             PaintBallInstance = null;

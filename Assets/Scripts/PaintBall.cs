@@ -10,8 +10,8 @@ public class PaintBall : MonoBehaviour
 
     [Header("Shader")]
     [SerializeField] Texture2D PaintBrush;
-
     [SerializeField] float decreaseSpeedAmount;
+
 
     /*    public Texture2D textureA;*/
     private void Start()
