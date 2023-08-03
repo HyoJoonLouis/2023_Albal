@@ -49,7 +49,8 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,1<<LayerMask.NameToLayer("Paintable")))
