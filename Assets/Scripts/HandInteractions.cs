@@ -93,6 +93,7 @@ public class HandInteractions : MonoBehaviour
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             currentBulletCount--;
+            Debug.Log(currentBulletCount / MaxBulletCount);
             AmmoMaterial.SetFloat("_Fill", currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", 0);
