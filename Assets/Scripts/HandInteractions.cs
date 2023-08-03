@@ -16,6 +16,7 @@ public class HandInteractions : MonoBehaviour
     [SerializeField] InputActionProperty BounceProperty;
 
     [Header("Adjustments")]
+    [SerializeField] Transform ShootPosition;
     [SerializeField] float MaxChargeTime;
     private float ChargeTime;
     [SerializeField] float BulletIncreaseSpeed;
@@ -24,6 +25,8 @@ public class HandInteractions : MonoBehaviour
     private bool isCoolTime;
     [SerializeField] int MaxBulletCount;
     private int currentBulletCount;
+    private Material AmmoMaterial;
+    private Material TubeMaterial;
 
     [Header("Right Hand Shake")]
     [SerializeField] float ShakeThreshold;
@@ -48,6 +51,8 @@ public class HandInteractions : MonoBehaviour
         PreviousRightHandPosition = RightHand.transform.position;
         CountShake = 0;
         isTransparent = 0;
+        AmmoMaterial = transform.Find("Sphere002").GetComponent<Material>();
+        TubeMaterial = transform.Find("Tube002").GetComponent<Material>();
     }
 
     // Update is called once per frame
@@ -81,12 +86,15 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue > 0.8f)
         {
             ChargeTime = Mathf.Clamp(ChargeTime += Time.deltaTime, 0, MaxChargeTime);
+            TubeMaterial.SetFloat("Fill", ChargeTime / MaxChargeTime);
         }
         if (ChargeValue < 0.2f && ChargeTime != 0)
         {
-            PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), RightHand.transform.forward, RightHand.transform.position);
+            PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             currentBulletCount--;
+            AmmoMaterial.SetFloat("Fill", currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
+            TubeMaterial.SetFloat("Fill", 0);
             PaintBallInstance = null;
             StartCoroutine(SetCoolTime());
         }
@@ -107,6 +115,7 @@ public class HandInteractions : MonoBehaviour
             Debug.Log("All Shaked");
             CountShake = 0;
             currentBulletCount = MaxBulletCount;
+            AmmoMaterial.SetFloat("Fill", 1);
         }
         PreviousRightHandPosition = RightHand.transform.position;
     }
