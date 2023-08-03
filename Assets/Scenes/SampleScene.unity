@@ -238,37 +238,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!1 &729153533
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 729153534}
-  m_Layer: 0
-  m_Name: ShootPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &729153534
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729153533}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.2817, z: 0.1094}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7317376076225996336}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +633,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1d6b9b0b2521a4f95be201c7107f0b, type: 3}
+--- !u!4 &1461327630291150069 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2649702509595001490, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461327630291150068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7317376076225996334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,7 +750,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ShootPosition
       value: 
-      objectReference: {fileID: 729153534}
+      objectReference: {fileID: 1461327630291150069}
     - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
         type: 3}
       propertyPath: MaxBulletCount
@@ -867,12 +842,6 @@ PrefabInstance:
 --- !u!4 &7317376076225996335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1175132646069530410, guid: 14dbe6d593a112441b0fb6ea97d5482e,
-    type: 3}
-  m_PrefabInstance: {fileID: 7317376076225996334}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7317376076225996336 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1175132644884910227, guid: 14dbe6d593a112441b0fb6ea97d5482e,
     type: 3}
   m_PrefabInstance: {fileID: 7317376076225996334}
   m_PrefabAsset: {fileID: 0}
