@@ -51,8 +51,8 @@ public class HandInteractions : MonoBehaviour
         PreviousRightHandPosition = RightHand.transform.position;
         CountShake = 0;
         isTransparent = 0;
-        AmmoMaterial = transform.Find("Sphere002").GetComponent<Material>();
-        TubeMaterial = transform.Find("Tube002").GetComponent<Material>();
+        AmmoMaterial = transform.Find("Sphere002").GetComponent<Renderer>().material;
+        TubeMaterial = transform.Find("Tube002").GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -81,7 +81,8 @@ public class HandInteractions : MonoBehaviour
 
         if (ChargeValue > 0.8f && ChargeTime == 0)
         {
-            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();
+            PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, 0, 0), this.transform.rotation).GetComponent<PaintBall>();
+/*            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();*/
         }
         if (ChargeValue > 0.8f)
         {
