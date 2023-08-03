@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PaintBrush: {fileID: 2800000, guid: 59d60e2f9b6874e4db9119b3a76670fa, type: 3}
   decreaseSpeedAmount: 0.7
-  OnHitParticle: {fileID: 4153006944331133725, guid: eaf1da50ef8b04244afce8ab9e81603f,
+  HitParticle: {fileID: 5605775616955320972, guid: eaf1da50ef8b04244afce8ab9e81603f,
     type: 3}
 --- !u!54 &3305290576471654711
 Rigidbody:
