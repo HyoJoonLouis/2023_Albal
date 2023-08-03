@@ -87,15 +87,15 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue > 0.8f)
         {
             ChargeTime = Mathf.Clamp(ChargeTime += Time.deltaTime, 0, MaxChargeTime);
-            TubeMaterial.SetFloat("Fill", ChargeTime / MaxChargeTime);
+            TubeMaterial.SetFloat("_Fill", ChargeTime / MaxChargeTime);
         }
         if (ChargeValue < 0.2f && ChargeTime != 0)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             currentBulletCount--;
-            AmmoMaterial.SetFloat("Fill", currentBulletCount / MaxBulletCount);
+            AmmoMaterial.SetFloat("_Fill", currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
-            TubeMaterial.SetFloat("Fill", 0);
+            TubeMaterial.SetFloat("_Fill", 0);
             PaintBallInstance = null;
             StartCoroutine(SetCoolTime());
         }
@@ -116,7 +116,7 @@ public class HandInteractions : MonoBehaviour
             Debug.Log("All Shaked");
             CountShake = 0;
             currentBulletCount = MaxBulletCount;
-            AmmoMaterial.SetFloat("Fill", 1);
+            AmmoMaterial.SetFloat("_Fill", 1);
         }
         PreviousRightHandPosition = RightHand.transform.position;
     }
