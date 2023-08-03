@@ -51,8 +51,8 @@ public class HandInteractions : MonoBehaviour
         PreviousRightHandPosition = RightHand.transform.position;
         CountShake = 0;
         isTransparent = 0;
-        AmmoMaterial = transform.Find("Sphere002").GetComponent<Renderer>().material;
-        TubeMaterial = transform.Find("Tube002").GetComponent<Renderer>().material;
+        AmmoMaterial = GameObject.Find("Sphere002").GetComponent<Renderer>().material;
+        TubeMaterial = GameObject.Find("Tube002").GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
