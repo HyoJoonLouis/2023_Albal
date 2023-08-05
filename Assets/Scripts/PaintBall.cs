@@ -9,7 +9,7 @@ public class PaintBall : MonoBehaviour
     private int Bounce;
 
     [Header("Shader")]
-    [SerializeField] Texture2D PaintBrush;
+    [SerializeField] Texture2D[] PaintBrush;
     [SerializeField] float decreaseSpeedAmount;
 
 
@@ -39,6 +39,7 @@ public class PaintBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if(Bounce > 0)
         {
             Bounce--;
@@ -50,13 +51,18 @@ public class PaintBall : MonoBehaviour
         }
 
         //Destroy(this.gameObject);
+        IPaintable paintable = collision.transform.GetComponent<IPaintable>();
+        if (paintable != null)
+        {
+            paintable.Hit();
+        }
         ObjectPoolManager.ReturnObjectToPool(this.gameObject);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,1<<LayerMask.NameToLayer("Paintable")))
         {
             Debug.Log(hit.textureCoord);
-            hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush);
+            hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush[Random.Range(0, PaintBrush.Length)]);
         }
     }
 

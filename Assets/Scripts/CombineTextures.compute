@@ -12,7 +12,8 @@ float2 Position;
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
     // TODO: insert actual code here!
-    float4 color = TextureB[id.xy];
+    float4 color = TextureB[id.xy].rgba;
+
     int texSizeA_x; 
     int texSizeB_x; 
     int texSizeA_y; 
@@ -24,8 +25,9 @@ void CSMain (uint3 id : SV_DispatchThreadID)
     int pixel_x = ((int)Position.x - texSizeB_x / 2) + id.x;
     int pixel_y = ((int)Position.y - texSizeB_y / 2) + id.y;
 
-    if (color.a > 0.0f && pixel_x > 0 && pixel_x < texSizeA_x && pixel_y > 0 && pixel_y < texSizeA_y) {
+    if (color.a == 1.0f && pixel_x > 0 && pixel_x < texSizeA_x && pixel_y > 0 && pixel_y < texSizeA_y) {
         Result[float2(pixel_x, pixel_y)] = color;
+
     }
 
 }
