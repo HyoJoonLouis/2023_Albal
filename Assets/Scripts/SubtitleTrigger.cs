@@ -41,8 +41,8 @@ public class SubtitleTrigger : MonoBehaviour
 
     public void Update()
     {
-        bool AKeyPressed = RIghtHandAKey.action.ReadValue<bool>();
-        if(AKeyPressed && Time.timeScale == 0.0f)
+        float AKeyPressed = RIghtHandAKey.action.ReadValue<float>();
+        if(AKeyPressed > 0.8f && Time.timeScale == 0.0f)
         {
             Time.timeScale = 1.0f;
         }
