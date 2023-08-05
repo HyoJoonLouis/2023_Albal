@@ -26,7 +26,7 @@ public class SubtitleTrigger : MonoBehaviour
 
         if(CanPause)
         {
-            EditorApplication.isPaused = true;
+            Time.timeScale = 0.0f;
         }
         Subtitle.text = Text;
     }
@@ -42,9 +42,9 @@ public class SubtitleTrigger : MonoBehaviour
     public void Update()
     {
         bool AKeyPressed = RIghtHandAKey.action.ReadValue<bool>();
-        if(AKeyPressed && EditorApplication.isPaused == true)
+        if(AKeyPressed && Time.timeScale == 0.0f)
         {
-            EditorApplication.isPaused = false;
+            Time.timeScale = 1.0f;
         }
     }
 }
