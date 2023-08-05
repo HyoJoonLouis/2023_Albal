@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f7b1282aaca0848960cfbf9c4811f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWobble: 0.03
+  MaxWobble: 0.01
   WobbleSpeed: 1
   Recovery: 1
 --- !u!1 &1885158155834505892
