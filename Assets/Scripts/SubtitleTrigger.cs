@@ -21,6 +21,9 @@ public class SubtitleTrigger : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player"))
+            return;
+
         if(CanPause)
         {
             EditorApplication.isPaused = true;
@@ -30,6 +33,8 @@ public class SubtitleTrigger : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        if (!other.CompareTag("Player"))
+            return;
         Subtitle.text = "";
     }
 
