@@ -39,7 +39,7 @@ public class PaintBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
+        Debug.Log(collision.transform.name);
         if(Bounce > 0)
         {
             Bounce--;
