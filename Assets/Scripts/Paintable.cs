@@ -33,13 +33,13 @@ public class Paintable : MonoBehaviour
         ResultTexture.Create();
 
         int kernalId = computeShader.FindKernel("CSMain");
-        computeShader.SetTexture(kernalId, "TextureA", PaintTexture);
+        computeShader.SetTexture(kernalId, "TextureA", PaintableMaterial.GetTexture("_HitTex"));
         computeShader.SetTexture(kernalId, "TextureB", Brush);
         computeShader.SetVector("Position", new Vector2(HitCoord.x * PaintTexture.width, HitCoord.y * PaintTexture.height));
         computeShader.SetTexture(kernalId, "Result", ResultTexture);
         computeShader.Dispatch(kernalId, PaintTexture.width / 8, PaintTexture.height / 8, 1);
 
         PaintableMaterial.SetTexture("_HitTex", ResultTexture);
-        this.GetComponent<Renderer>().material = PaintableMaterial;
+/*        this.GetComponent<Renderer>().material = PaintableMaterial;*/
     }
 }
