@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7858237582359248977}
   - component: {fileID: 7858237582359248981}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Cube_White
   m_TagString: Paintable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
