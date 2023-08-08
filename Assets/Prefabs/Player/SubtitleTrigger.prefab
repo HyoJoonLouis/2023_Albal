@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8879949626896115862}
   - component: {fileID: 7783549475747428767}
   - component: {fileID: 9069373872543691145}
+  - component: {fileID: -2089645640523051014}
   m_Layer: 0
   m_Name: SubtitleTrigger
   m_TagString: Untagged
@@ -69,7 +70,20 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: 1855836014308820768, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   CanPause: 0
   Text: 
+--- !u!114 &-2089645640523051014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295634999943151227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets: []

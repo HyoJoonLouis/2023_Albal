@@ -36,13 +36,14 @@ public class SubtitleTrigger : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
         Subtitle.text = "";
+        this.gameObject.SetActive(false);
     }
 
 
     public void Update()
     {
-        float AKeyPressed = RIghtHandAKey.action.ReadValue<float>();
-        if(AKeyPressed > 0.8f && Time.timeScale == 0.0f)
+        bool AKeyPressed = RIghtHandAKey.action.ReadValue<bool>();
+        if(AKeyPressed && Time.timeScale == 0.0f)
         {
             Time.timeScale = 1.0f;
         }
