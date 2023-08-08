@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4295634999943151227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.656238, y: 4.656238, z: 4.656238}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,18 +58,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da55d9b16a042374d9130ea7b44c6200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RIghtHandAKey:
+  PressedActionProperty:
     m_UseReference: 1
     m_Action:
-      m_Name: R Ight Hand A Key
+      m_Name: Pressed Action Property
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: beaf141f-0dc0-4024-91d8-adddbdd76842
+      m_Id: cecd7a18-e21c-41c2-9d34-7edbbf2ddaac
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: -8323380182297632245, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
-  CanPause: 0
-  Text: 
+  CanPause: 1
+  Text: 123123

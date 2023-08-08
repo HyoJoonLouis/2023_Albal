@@ -10,7 +10,7 @@ public class HandInteractions : MonoBehaviour
     [SerializeField] GameObject RightHand;
     [SerializeField] InputActionProperty ShootProperty;
     [SerializeField] InputActionProperty ChangePaintProperty;
-
+    bool isAButtonPressed = false;
 
     [Header("Left Hand Actions")]
     [SerializeField] InputActionProperty BounceProperty;
@@ -62,13 +62,18 @@ public class HandInteractions : MonoBehaviour
         float ChangePaintValue = ChangePaintProperty.action.ReadValue<float>();
         float BouncePropertyValue = BounceProperty.action.ReadValue<float>();
 
-        if (ChangePaintValue > 0.8f)
+        if (ChangePaintValue >= 0.8f && isAButtonPressed == false)
         {
+            isAButtonPressed = true;
             if(isTransparent == 0)
                 isTransparent = 1;
             else
                 isTransparent = 0;
             GameManager.PaintTransparent(isTransparent);
+        }
+        if(isAButtonPressed == true && ChangePaintValue < 0.1f)
+        {
+            isAButtonPressed = false;
         }
 
         if (isCoolTime || currentBulletCount == 0)
@@ -86,14 +91,13 @@ public class HandInteractions : MonoBehaviour
         }
         if (ChargeValue > 0.8f)
         {
-            ChargeTime = Mathf.Clamp(ChargeTime += Time.deltaTime, 0, MaxChargeTime);
+            ChargeTime = Mathf.Clamp(ChargeTime += Time.unscaledDeltaTime, 0, MaxChargeTime);
             TubeMaterial.SetFloat("_Fill", ChargeTime / MaxChargeTime);
         }
-        if (ChargeValue < 0.2f && ChargeTime != 0)
+        if (ChargeValue < 0.2f && ChargeTime != 0 && PaintBallInstance != null)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             currentBulletCount--;
-            Debug.Log(currentBulletCount / MaxBulletCount);
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", 0);

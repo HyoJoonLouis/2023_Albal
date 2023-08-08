@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Collider))]
 public class SubtitleTrigger : MonoBehaviour
 {
-    [SerializeField] InputActionProperty RIghtHandAKey;
+    [SerializeField] InputActionProperty PressedActionProperty;
 
     [SerializeField] bool CanPause;
     [SerializeField] string Text;
@@ -26,7 +26,7 @@ public class SubtitleTrigger : MonoBehaviour
 
         if(CanPause)
         {
-            Time.timeScale = 0.0f;
+            Time.timeScale = 0;
         }
         Subtitle.text = Text;
     }
@@ -36,15 +36,17 @@ public class SubtitleTrigger : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
         Subtitle.text = "";
+        this.gameObject.SetActive(false);
     }
 
 
     public void Update()
     {
-        float AKeyPressed = RIghtHandAKey.action.ReadValue<float>();
-        if(AKeyPressed > 0.8f && Time.timeScale == 0.0f)
+        float isPressed = PressedActionProperty.action.ReadValue<float>();
+        if (isPressed >= 0.8 && Time.timeScale == 0)
         {
-            Time.timeScale = 1.0f;
+            Time.timeScale = 1;
         }
     }
+
 }
