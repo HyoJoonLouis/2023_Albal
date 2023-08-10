@@ -44,9 +44,11 @@ public class PaintBall : MonoBehaviour
         {
             Bounce--;
             Rigidbody rb = this.GetComponent<Rigidbody>();
+            Debug.Log(rb.velocity);
             float speed = rb.velocity.magnitude;
             Vector3 direction = Vector3.Reflect(rb.velocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction * speed * decreaseSpeedAmount;
+            Debug.Log(rb.velocity);
             return;
         }
 
