@@ -460,13 +460,13 @@ MonoBehaviour:
     m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   ShootPosition: {fileID: 6886507973688826359}
-  MaxChargeTime: 3
-  BulletIncreaseSpeed: 5
-  BulletBasicSpeed: 20
-  CoolTime: 1
-  MaxBulletCount: 3
-  ShakeThreshold: 0.2
-  ShakeAmount: 1
+  MaxChargeTime: 1
+  BulletIncreaseSpeed: 25
+  BulletBasicSpeed: 10
+  CoolTime: 0.5
+  MaxBulletCount: 10
+  ShakeThreshold: 2
+  ShakeAmount: 2
   PaintBall:
   - {fileID: 8493456430031930924, guid: 507ffe49fea1bb642b9c59874bdf89ce, type: 3}
 --- !u!1 &1175132646069530411
@@ -1049,6 +1049,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421716095968587240, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: MaxWobble
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1d6b9b0b2521a4f95be201c7107f0b, type: 3}
