@@ -97,6 +97,7 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue < 0.2f && ChargeTime != 0 && PaintBallInstance != null)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
+            Debug.Log("Shoot Position" + ShootPosition.forward);
             currentBulletCount--;
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
