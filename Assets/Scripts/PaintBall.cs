@@ -28,8 +28,9 @@ public class PaintBall : MonoBehaviour
         Speed = speed;
         Direction = direction.normalized;
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, 0, 0);
-        rb.AddForce(Speed * Direction, ForceMode.Impulse);
+/*        rb.velocity = new Vector3(0, 0, 0);
+        rb.AddForce(Speed * Direction, ForceMode.Impulse);*/
+        rb.velocity = Speed * direction;
     }
     
     public void SetBounce(int value)
@@ -39,7 +40,6 @@ public class PaintBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.transform.name);
         if(Bounce > 0)
         {
             Bounce--;
