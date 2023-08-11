@@ -18,6 +18,8 @@ public class PaintBall : MonoBehaviour
 
     [Header("Particles")]
     [SerializeField] GameObject HitParticle;
+    [SerializeField] GameObject TrailParticle;
+    GameObject SpawnedTrail;
 
     [Header("Sounds")]
     [SerializeField] AudioClip ExplodeSound;
@@ -29,6 +31,9 @@ public class PaintBall : MonoBehaviour
         Bounce = 0;
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
+        SpawnedTrail = ObjectPoolManager.SpawnObject(TrailParticle, this.transform.position, this.transform.rotation);
+        SpawnedTrail.transform.SetParent(this.transform);
     }
 
     public void Init(float speed, Vector3 direction, Vector3 position)
@@ -78,6 +83,7 @@ public class PaintBall : MonoBehaviour
             damagable.TakeDamage(Damage);
         }
         ObjectPoolManager.ReturnObjectToPool(this.gameObject);
+        ObjectPoolManager.ReturnObjectToPool(SpawnedTrail);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         audioSource.PlayOneShot(ExplodeSound);
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
