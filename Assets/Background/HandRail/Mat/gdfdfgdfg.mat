@@ -20,30 +20,32 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HandRail
-  m_Shader: {fileID: -6465566751694194690, guid: 1704d78533d3d6f49b80d02d4822aa7f,
-    type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_Name: gdfdfgdfg
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ValidKeywords:
   - _EMISSION
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 6c5d1fd66eddd2a429b487ea461cbef0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52cbec83256d46341aed0313a30be129, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e71be9192266e554398b65034a7bab60, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a4f852ce20f9fe408a29039c9dd10ad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -59,15 +61,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: ee196a11dcc5aaa40b2cbb77ad213e87, type: 3}
+        m_Texture: {fileID: 2800000, guid: 092045a159748644cb82962755273bb8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6c5d1fd66eddd2a429b487ea461cbef0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52cbec83256d46341aed0313a30be129, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 0edff6c0643da4140acc3ccd9a6906db, type: 3}
+        m_Texture: {fileID: 2800000, guid: 56f7836eb46c80d459a2c4a0562ac5de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -76,26 +78,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_092b93c01efc406c9b1569d8da1205bc_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 0edff6c0643da4140acc3ccd9a6906db, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_2c42c8fb33d044ba9f36fc9e5a20e38c_Texture_1:
-        m_Texture: {fileID: 2800000, guid: e71be9192266e554398b65034a7bab60, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_891f56fcfa3d4eff8962dcb64dc60973_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 75721df8959ed0545a67671b61ab94cf, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_c698a47a2e4a4f41abb10ff00d5e2040_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 6c5d1fd66eddd2a429b487ea461cbef0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_eed0b565ae78421a81a2b70171deac9f_Texture_1:
-        m_Texture: {fileID: 2800000, guid: ee196a11dcc5aaa40b2cbb77ad213e87, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -133,7 +115,6 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.075
