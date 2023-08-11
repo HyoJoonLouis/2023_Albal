@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,10 +15,10 @@ public class SubtitleTrigger : MonoBehaviour
     [SerializeField] bool CanPause;
     [SerializeField] string Text;
 
-    private Text Subtitle;
+    private TextMeshProUGUI Subtitle;
     public void Start()
     {
-        Subtitle = GameObject.Find("Subtitle").GetComponent<Text>();
+        Subtitle = GameObject.Find("Subtitle").GetComponent<TextMeshProUGUI>();
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -35,6 +36,7 @@ public class SubtitleTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player"))
             return;
+
         Subtitle.text = "";
         this.gameObject.SetActive(false);
     }

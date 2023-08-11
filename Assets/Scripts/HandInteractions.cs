@@ -40,6 +40,11 @@ public class HandInteractions : MonoBehaviour
     
     PaintBall PaintBallInstance;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip ShootSound;
+    [SerializeField] AudioClip ReloadSound;
+    AudioSource audioSource;
+
     int isTransparent;
 
     void Start()
@@ -53,6 +58,7 @@ public class HandInteractions : MonoBehaviour
         isTransparent = 0;
         AmmoMaterial = GameObject.Find("Sphere002").GetComponent<Renderer>().material;
         TubeMaterial = GameObject.Find("Tube002").GetComponent<Renderer>().material;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -97,6 +103,7 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue < 0.2f && ChargeTime != 0 && PaintBallInstance != null)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
+            audioSource.PlayOneShot(ShootSound);
             Debug.Log("Shoot Position" + ShootPosition.forward);
             currentBulletCount--;
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
@@ -112,14 +119,13 @@ public class HandInteractions : MonoBehaviour
         if (Vector3.Distance(RightHand.transform.position, PreviousRightHandPosition) >= ShakeThreshold)
         {
             CountShake++;
-            Debug.Log("Shaked");
         }
         else
             CountShake = 0;
         
         if(CountShake > ShakeAmount)
         {
-            Debug.Log("All Shaked");
+            audioSource.PlayOneShot(ReloadSound);
             CountShake = 0;
             currentBulletCount = MaxBulletCount;
             AmmoMaterial.SetFloat("_Fill", 1);
