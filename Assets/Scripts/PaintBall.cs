@@ -42,8 +42,6 @@ public class PaintBall : MonoBehaviour
 /*        rb.velocity = new Vector3(0, 0, 0);
         rb.AddForce(Speed * Direction, ForceMode.Impulse);*/
         rb.velocity = speed * direction.normalized;
-        Debug.Log("Init direction" + direction);
-        Debug.Log("Init Velocity" + rb.velocity);
     }
     
     public void SetBounce(int value)
@@ -83,7 +81,6 @@ public class PaintBall : MonoBehaviour
             damagable.TakeDamage(Damage);
         }
         ObjectPoolManager.ReturnObjectToPool(this.gameObject);
-        ObjectPoolManager.ReturnObjectToPool(SpawnedTrail);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         audioSource.PlayOneShot(ExplodeSound);
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
