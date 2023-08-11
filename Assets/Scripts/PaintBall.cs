@@ -69,7 +69,10 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
-        //Destroy(this.gameObject);
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
+        ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
+
+
         IPaintable paintable = collision.transform.GetComponent<IPaintable>();
         if (paintable != null)
         {
@@ -80,9 +83,9 @@ public class PaintBall : MonoBehaviour
         {
             damagable.TakeDamage(Damage);
         }
-        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
-        ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
+
         audioSource.PlayOneShot(ExplodeSound);
+
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,1<<LayerMask.NameToLayer("Paintable")))
         {

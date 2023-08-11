@@ -104,7 +104,6 @@ public class HandInteractions : MonoBehaviour
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             audioSource.PlayOneShot(ShootSound);
-            Debug.Log("Shoot Position" + ShootPosition.forward);
             currentBulletCount--;
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
