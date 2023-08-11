@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7814897081260269201}
   - component: {fileID: 7814897081260269203}
   - component: {fileID: 7814897081260269200}
+  - component: {fileID: 2881579506788371702}
   m_Layer: 0
   m_Name: sub_explosion1
   m_TagString: Untagged
@@ -43,12 +44,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4870,6 +4871,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2881579506788371702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897081260269206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897081594440508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,6 +4894,7 @@ GameObject:
   - component: {fileID: 7814897081594440511}
   - component: {fileID: 7814897081594440505}
   - component: {fileID: 7814897081594440510}
+  - component: {fileID: 2600592460674293065}
   m_Layer: 0
   m_Name: par_01
   m_TagString: Untagged
@@ -4913,12 +4927,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9856,6 +9870,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2600592460674293065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897081594440508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897081773053073
 GameObject:
   m_ObjectHideFlags: 0
@@ -9867,6 +9893,7 @@ GameObject:
   - component: {fileID: 7814897081773053074}
   - component: {fileID: 7814897081773053075}
   - component: {fileID: 7814897081773053072}
+  - component: {fileID: 5066755208208880409}
   m_Layer: 0
   m_Name: eff_paint001
   m_TagString: Untagged
@@ -9906,12 +9933,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -14675,6 +14702,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5066755208208880409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897081773053073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897082054502201
 GameObject:
   m_ObjectHideFlags: 0
@@ -14686,6 +14725,7 @@ GameObject:
   - component: {fileID: 7814897082054502200}
   - component: {fileID: 7814897082054502202}
   - component: {fileID: 7814897082054502203}
+  - component: {fileID: 5527218711045865220}
   m_Layer: 0
   m_Name: sub_explosion2
   m_TagString: Untagged
@@ -14718,12 +14758,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -19545,6 +19585,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5527218711045865220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897082054502201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897082343326668
 GameObject:
   m_ObjectHideFlags: 0
@@ -19556,6 +19608,7 @@ GameObject:
   - component: {fileID: 7814897082343326671}
   - component: {fileID: 7814897082343326665}
   - component: {fileID: 7814897082343326670}
+  - component: {fileID: 4386933703509668021}
   m_Layer: 0
   m_Name: line_01
   m_TagString: Untagged
@@ -19588,12 +19641,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -24415,6 +24468,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4386933703509668021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897082343326668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897082421285709
 GameObject:
   m_ObjectHideFlags: 0
@@ -24426,6 +24491,7 @@ GameObject:
   - component: {fileID: 7814897082421285708}
   - component: {fileID: 7814897082421285710}
   - component: {fileID: 7814897082421285711}
+  - component: {fileID: 3843240658053854840}
   m_Layer: 0
   m_Name: par_02
   m_TagString: Untagged
@@ -24458,12 +24524,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -29401,6 +29467,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &3843240658053854840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897082421285709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897082445170819
 GameObject:
   m_ObjectHideFlags: 0
@@ -29412,6 +29490,7 @@ GameObject:
   - component: {fileID: 7814897082445170818}
   - component: {fileID: 7814897082445170828}
   - component: {fileID: 7814897082445170829}
+  - component: {fileID: 3014448739981357650}
   m_Layer: 0
   m_Name: main_explosion
   m_TagString: Untagged
@@ -29444,12 +29523,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -34289,6 +34368,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &3014448739981357650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897082445170819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7814897082546609996
 GameObject:
   m_ObjectHideFlags: 0
@@ -34300,6 +34391,7 @@ GameObject:
   - component: {fileID: 7814897082546609993}
   - component: {fileID: 7814897082546609998}
   - component: {fileID: 7814897082546609999}
+  - component: {fileID: 6313024143802185019}
   m_Layer: 0
   m_Name: paint_sphere
   m_TagString: Untagged
@@ -34332,12 +34424,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -39293,3 +39385,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6313024143802185019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814897082546609996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8935173b01c5b468fb610b8db9c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
