@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 40014518cb7e3454ca0d795f4c4ac4bf
+=======
+guid: 0cc47faa6cf53ee4aab4be45de313247
+>>>>>>> origin/SeongWoo_Kang
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
