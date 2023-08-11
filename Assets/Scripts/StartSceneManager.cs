@@ -9,4 +9,14 @@ public class StartSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void OnOptionButton()
+    {
+
+    }
+
+    public void OnQuitButton()
+    {
+        Application.Quit();
+    }
 }
