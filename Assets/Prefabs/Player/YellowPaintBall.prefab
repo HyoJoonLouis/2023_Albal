@@ -130,7 +130,7 @@ MonoBehaviour:
     type: 3}
   TrailParticle: {fileID: 3518579381442683612, guid: 9a596ac64c6d9404ca9d68e6be615634,
     type: 3}
-  ExplodeSound: {fileID: 0}
+  ExplodeSound: {fileID: 8300000, guid: e1ddc226088ccdd47b7a7c4dcaabc8ce, type: 3}
 --- !u!54 &3305290576471654711
 Rigidbody:
   m_ObjectHideFlags: 0
