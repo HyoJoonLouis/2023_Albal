@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Timeout: 10
+  m_Timeout: 6
   m_XROrigin: {fileID: 1175132644884910224}
 --- !u!114 &1175132644884910239
 MonoBehaviour:
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1175132644884910238}
-  m_TurnSpeed: 60
+  m_TurnSpeed: 150
   m_LeftHandTurnAction:
     m_UseReference: 0
     m_Action:
@@ -564,11 +564,11 @@ MonoBehaviour:
     m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   ShootPosition: {fileID: 229050137182637757}
-  MaxChargeTime: 3
-  BulletIncreaseSpeed: 5
-  BulletBasicSpeed: 20
-  CoolTime: 1
-  MaxBulletCount: 3
+  MaxChargeTime: 1
+  BulletIncreaseSpeed: 15
+  BulletBasicSpeed: 15
+  CoolTime: 0.2
+  MaxBulletCount: 10
   ShakeThreshold: 0.15
   ShakeAmount: 1
   PaintBall:
@@ -1388,12 +1388,12 @@ PrefabInstance:
     - target: {fileID: 4725193237280797213, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.072
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4725193237280797213, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.66
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 4725193237280797213, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
         type: 3}
