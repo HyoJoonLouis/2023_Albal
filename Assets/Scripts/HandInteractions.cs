@@ -128,10 +128,10 @@ public class HandInteractions : MonoBehaviour
         
         if(CountShake > ShakeAmount)
         {
-            audioSource.PlayOneShot(ReloadSound.GetRandom());
             CountShake = 0;
             currentBulletCount = MaxBulletCount;
             AmmoMaterial.SetFloat("_Fill", 1);
+            audioSource.PlayOneShot(ReloadSound.GetRandom());
         }
         PreviousRightHandPosition = RightHand.transform.position;
     }
