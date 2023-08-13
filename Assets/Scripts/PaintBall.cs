@@ -27,7 +27,7 @@ public class PaintBall : MonoBehaviour
     AudioSource audioSource;
 
     /*    public Texture2D textureA;*/
-    private void Start()
+    private void Awake()
     {
         Bounce = 0;
         rb = GetComponent<Rigidbody>();

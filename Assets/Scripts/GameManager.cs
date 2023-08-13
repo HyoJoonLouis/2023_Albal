@@ -29,10 +29,15 @@ public class RandomSounds<T>
 {
     public List<T> Sounds;
 
-    T PreviousSound;
+    T PreviousSound = default(T);
 
     public T GetRandom()
     {
+        if(Sounds.Count == 0)
+        {
+            return PreviousSound;
+        }
+
         T UsedSound = Sounds[UnityEngine.Random.Range(0, Sounds.Count)];
         Sounds.Remove(UsedSound);
         Sounds.Add(PreviousSound);
