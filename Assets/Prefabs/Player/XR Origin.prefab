@@ -575,8 +575,13 @@ MonoBehaviour:
   - {fileID: 8493456430031930924, guid: 507ffe49fea1bb642b9c59874bdf89ce, type: 3}
   ShootParticle: {fileID: 6262797817512472231, guid: 3d3e884d89800174c9b6cd09a6acb50d,
     type: 3}
-  ShootSound: {fileID: 0}
-  ReloadSound: {fileID: 0}
+  ShootSound: {fileID: 8300000, guid: 73516d6f58537984491a59137ccbe93b, type: 3}
+  ReloadSound:
+    Sounds:
+    - {fileID: 8300000, guid: 949b0112988d9544aad0632dad4c5aa5, type: 3}
+    - {fileID: 8300000, guid: 8ad58d222fceefc4ba79eeab3a25bbc6, type: 3}
+    - {fileID: 8300000, guid: 602b9408b04b6eb4ba20ad4bb5b56a12, type: 3}
+    - {fileID: 8300000, guid: 20cc4f79a5549754c93dd908d442fd0c, type: 3}
 --- !u!114 &6123221695638957286
 MonoBehaviour:
   m_ObjectHideFlags: 0
