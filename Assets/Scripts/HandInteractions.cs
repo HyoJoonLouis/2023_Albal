@@ -44,7 +44,7 @@ public class HandInteractions : MonoBehaviour
     [SerializeField] GameObject ShootParticle;
 
     [Header("Sounds")]
-    [SerializeField] AudioClip ShootSound;
+    [SerializeField] RandomSounds<AudioClip> ShootSound;
     [SerializeField] RandomSounds<AudioClip> ReloadSound;
     AudioSource audioSource;
 
@@ -95,7 +95,7 @@ public class HandInteractions : MonoBehaviour
 
         if (ChargeValue > 0.8f && ChargeTime == 0)
         {
-            PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, 0, 0), this.transform.rotation).GetComponent<PaintBall>();
+            PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, -9999, -9999), this.transform.rotation).GetComponent<PaintBall>();
 /*            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();*/
         }
         if (ChargeValue > 0.8f)
@@ -106,7 +106,7 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue < 0.2f && ChargeTime != 0 && PaintBallInstance != null)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
-            audioSource.PlayOneShot(ShootSound);
+            audioSource.PlayOneShot(ShootSound.GetRandom());
             currentBulletCount--;
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
             ChargeTime = 0;

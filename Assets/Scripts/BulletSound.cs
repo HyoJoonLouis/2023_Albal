@@ -13,6 +13,11 @@ public class BulletSound : MonoBehaviour
     }
     public void PlaySound(AudioClip audioClip)
     {
+        if (audioClip.Equals(default(AudioClip)))
+        {
+            ObjectPoolManager.ReturnObjectToPool(this.gameObject);
+            return;
+        }
         audioSource.PlayOneShot(audioClip);
         Invoke("ReturnObjectToPool", audioClip.length + 0.2f);
     }
