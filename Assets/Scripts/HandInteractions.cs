@@ -45,7 +45,7 @@ public class HandInteractions : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] AudioClip ShootSound;
-    [SerializeField] AudioClip ReloadSound;
+    [SerializeField] RandomSounds<AudioClip> ReloadSound;
     AudioSource audioSource;
 
     int isTransparent;
@@ -128,7 +128,7 @@ public class HandInteractions : MonoBehaviour
         
         if(CountShake > ShakeAmount)
         {
-            audioSource.PlayOneShot(ReloadSound);
+            audioSource.PlayOneShot(ReloadSound.GetRandom());
             CountShake = 0;
             currentBulletCount = MaxBulletCount;
             AmmoMaterial.SetFloat("_Fill", 1);

@@ -30,4 +30,9 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
     {
         CurrentCheckPoint = checkpoint;
     }
+
+    public void SpawnCharacter()
+    {
+        this.transform.position = CurrentCheckPoint.position;
+    }
 }
