@@ -577,11 +577,7 @@ MonoBehaviour:
     type: 3}
   ShootSound: {fileID: 8300000, guid: 73516d6f58537984491a59137ccbe93b, type: 3}
   ReloadSound:
-    Sounds:
-    - {fileID: 8300000, guid: 949b0112988d9544aad0632dad4c5aa5, type: 3}
-    - {fileID: 8300000, guid: 8ad58d222fceefc4ba79eeab3a25bbc6, type: 3}
-    - {fileID: 8300000, guid: 602b9408b04b6eb4ba20ad4bb5b56a12, type: 3}
-    - {fileID: 8300000, guid: 20cc4f79a5549754c93dd908d442fd0c, type: 3}
+    Sounds: []
 --- !u!114 &6123221695638957286
 MonoBehaviour:
   m_ObjectHideFlags: 0
