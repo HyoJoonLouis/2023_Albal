@@ -22,7 +22,7 @@ public class PaintBall : MonoBehaviour
     GameObject SpawnedTrail;
 
     [Header("Sounds")]
-    [SerializeField] AudioClip ExplodeSound;
+    [SerializeField] RandomSounds<AudioClip> ExplodeSound;
     AudioSource audioSource;
 
     /*    public Texture2D textureA;*/
@@ -60,7 +60,7 @@ public class PaintBall : MonoBehaviour
             return;
 
 
-        if(Bounce > 0)
+        if (Bounce > 0)
         {
             Bounce--;
             float speed = PreviousVelocity.magnitude;
@@ -69,9 +69,9 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
-        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
+        Invoke("ReturnObjectToPool", 1);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
-        audioSource.PlayOneShot(ExplodeSound);
+        audioSource.PlayOneShot(ExplodeSound.GetRandom());
 
 
         IPaintable paintable = collision.transform.GetComponent<IPaintable>();
@@ -80,18 +80,24 @@ public class PaintBall : MonoBehaviour
             paintable.Hit();
         }
         IDamagable damagable = collision.transform.GetComponent<IDamagable>();
-        if(damagable != null) 
+        if (damagable != null)
         {
             damagable.TakeDamage(Damage);
         }
 
 
-        Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,1<<LayerMask.NameToLayer("Paintable")))
+        Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal, -collision.contacts[0].normal);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Paintable")))
         {
             Debug.Log(hit.textureCoord);
             hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush[Random.Range(0, PaintBrush.Length)]);
         }
+    }
+
+
+    private void ReturnObjectToPool()
+    {
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
     }
 
     
