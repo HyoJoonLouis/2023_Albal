@@ -22,6 +22,9 @@ public class ButtonScript : MonoBehaviour, IPaintable
     }
     public void Hit()
     {
+        if (isHit == true)
+            return;
+
         isHit = true;
         ObjectPoolManager.SpawnObject(SparkParticle, this.transform.position, this.transform.rotation);
         activateParticle = ObjectPoolManager.SpawnObject(ActivateParticle, this.transform.position, this.transform.rotation);
