@@ -119,7 +119,7 @@ public class HandInteractions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(RightHand.transform.position, PreviousRightHandPosition) >= ShakeThreshold)
+        if (RightHand.transform.position.y - PreviousRightHandPosition.y >= ShakeThreshold)
         {
             CountShake++;
         }
