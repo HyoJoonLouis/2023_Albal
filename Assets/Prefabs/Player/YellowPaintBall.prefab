@@ -130,6 +130,8 @@ MonoBehaviour:
     type: 3}
   TrailParticle: {fileID: 3518579381442683612, guid: 9a596ac64c6d9404ca9d68e6be615634,
     type: 3}
+  BulletSoundInstance: {fileID: 927780434342575453, guid: de70d27ff5562fe489da46725cb3e982,
+    type: 3}
   ExplodeSound:
     Sounds:
     - {fileID: 8300000, guid: 949b0112988d9544aad0632dad4c5aa5, type: 3}
@@ -173,7 +175,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 2000
+  MaxDistance: 300
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
