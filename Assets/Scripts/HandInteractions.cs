@@ -112,7 +112,7 @@ public class HandInteractions : MonoBehaviour
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", 0);
             PaintBallInstance = null;
-            ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation);
+            ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation).transform.SetParent(this.gameObject.transform);
             StartCoroutine(SetCoolTime());
         }
     }
