@@ -40,6 +40,9 @@ public class HandInteractions : MonoBehaviour
     
     PaintBall PaintBallInstance;
 
+    [Header("Particles")]
+    [SerializeField] GameObject ShootParticle;
+
     [Header("Sounds")]
     [SerializeField] AudioClip ShootSound;
     [SerializeField] AudioClip ReloadSound;
@@ -109,6 +112,7 @@ public class HandInteractions : MonoBehaviour
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", 0);
             PaintBallInstance = null;
+            ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation);
             StartCoroutine(SetCoolTime());
         }
     }
