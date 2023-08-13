@@ -22,6 +22,7 @@ public class PaintBall : MonoBehaviour
     GameObject SpawnedTrail;
 
     [Header("Sounds")]
+    [SerializeField] GameObject BulletSoundInstance;
     [SerializeField] RandomSounds<AudioClip> ExplodeSound;
     AudioSource audioSource;
 
@@ -69,9 +70,9 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
-        Invoke("ReturnObjectToPool", 1);
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
-        audioSource.PlayOneShot(ExplodeSound.GetRandom());
+        ObjectPoolManager.SpawnObject(BulletSoundInstance, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(ExplodeSound.GetRandom());
 
 
         IPaintable paintable = collision.transform.GetComponent<IPaintable>();
@@ -92,13 +93,5 @@ public class PaintBall : MonoBehaviour
             Debug.Log(hit.textureCoord);
             hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush[Random.Range(0, PaintBrush.Length)]);
         }
-    }
-
-
-    private void ReturnObjectToPool()
-    {
-        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
-    }
-
-    
+    }    
 }
