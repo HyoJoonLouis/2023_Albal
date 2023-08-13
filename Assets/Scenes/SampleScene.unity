@@ -1157,5 +1157,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
+    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
+        type: 3}
+      propertyPath: ShootSound.Sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
+        type: 3}
+      propertyPath: ShootSound.Sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d837f6cb2bb508341a22cd31eeb96b11, type: 3}
+    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
+        type: 3}
+      propertyPath: ShootSound.Sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 803ccc7631a39364584d377ef7eaf9a9, type: 3}
+    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
+        type: 3}
+      propertyPath: ShootSound.Sounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b767a0791cf30548bc17c0df9f7f1eb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14dbe6d593a112441b0fb6ea97d5482e, type: 3}
