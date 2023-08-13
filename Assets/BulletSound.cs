@@ -7,7 +7,7 @@ public class BulletSound : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    public void Start()
+    public void Awake()
     {
         audioSource = GetComponent<AudioSource>();    
     }
