@@ -42,7 +42,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         if(pool == null)
         {
-            Debug.LogWarning("Trying To release an object that is not pooled" + obj.name);
+            Debug.LogWarning("Trying To release an object that is not pooled " + obj.name);
         }
         else
         {
