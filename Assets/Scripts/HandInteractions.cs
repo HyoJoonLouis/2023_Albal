@@ -40,9 +40,12 @@ public class HandInteractions : MonoBehaviour
     
     PaintBall PaintBallInstance;
 
+    [Header("Particles")]
+    [SerializeField] GameObject ShootParticle;
+
     [Header("Sounds")]
-    [SerializeField] AudioClip ShootSound;
-    [SerializeField] AudioClip ReloadSound;
+    [SerializeField] RandomSounds<AudioClip> ShootSound;
+    [SerializeField] RandomSounds<AudioClip> ReloadSound;
     AudioSource audioSource;
 
     int isTransparent;
@@ -92,7 +95,7 @@ public class HandInteractions : MonoBehaviour
 
         if (ChargeValue > 0.8f && ChargeTime == 0)
         {
-            PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, 0, 0), this.transform.rotation).GetComponent<PaintBall>();
+            PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, -9999, -9999), this.transform.rotation).GetComponent<PaintBall>();
 /*            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();*/
         }
         if (ChargeValue > 0.8f)
@@ -103,12 +106,13 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue < 0.2f && ChargeTime != 0 && PaintBallInstance != null)
         {
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
-            audioSource.PlayOneShot(ShootSound);
+            audioSource.PlayOneShot(ShootSound.GetRandom());
             currentBulletCount--;
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", 0);
             PaintBallInstance = null;
+            ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation).transform.SetParent(this.gameObject.transform);
             StartCoroutine(SetCoolTime());
         }
     }
@@ -124,10 +128,10 @@ public class HandInteractions : MonoBehaviour
         
         if(CountShake > ShakeAmount)
         {
-            audioSource.PlayOneShot(ReloadSound);
             CountShake = 0;
             currentBulletCount = MaxBulletCount;
             AmmoMaterial.SetFloat("_Fill", 1);
+            audioSource.PlayOneShot(ReloadSound.GetRandom());
         }
         PreviousRightHandPosition = RightHand.transform.position;
     }

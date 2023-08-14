@@ -569,12 +569,16 @@ MonoBehaviour:
   BulletBasicSpeed: 15
   CoolTime: 0.2
   MaxBulletCount: 10
-  ShakeThreshold: 0.15
+  ShakeThreshold: 0.3
   ShakeAmount: 1
   PaintBall:
   - {fileID: 8493456430031930924, guid: 507ffe49fea1bb642b9c59874bdf89ce, type: 3}
-  ShootSound: {fileID: 0}
-  ReloadSound: {fileID: 0}
+  ShootParticle: {fileID: 6262797817512472231, guid: 3d3e884d89800174c9b6cd09a6acb50d,
+    type: 3}
+  ShootSound:
+    Sounds: []
+  ReloadSound:
+    Sounds: []
 --- !u!114 &6123221695638957286
 MonoBehaviour:
   m_ObjectHideFlags: 0

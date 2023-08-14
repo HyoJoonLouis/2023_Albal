@@ -130,7 +130,14 @@ MonoBehaviour:
     type: 3}
   TrailParticle: {fileID: 3518579381442683612, guid: 9a596ac64c6d9404ca9d68e6be615634,
     type: 3}
-  ExplodeSound: {fileID: 8300000, guid: e1ddc226088ccdd47b7a7c4dcaabc8ce, type: 3}
+  BulletSoundInstance: {fileID: 927780434342575453, guid: de70d27ff5562fe489da46725cb3e982,
+    type: 3}
+  ExplodeSound:
+    Sounds:
+    - {fileID: 8300000, guid: 949b0112988d9544aad0632dad4c5aa5, type: 3}
+    - {fileID: 8300000, guid: 8ad58d222fceefc4ba79eeab3a25bbc6, type: 3}
+    - {fileID: 8300000, guid: 602b9408b04b6eb4ba20ad4bb5b56a12, type: 3}
+    - {fileID: 8300000, guid: 20cc4f79a5549754c93dd908d442fd0c, type: 3}
 --- !u!54 &3305290576471654711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,7 +175,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 300
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

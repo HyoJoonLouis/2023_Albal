@@ -22,11 +22,12 @@ public class PaintBall : MonoBehaviour
     GameObject SpawnedTrail;
 
     [Header("Sounds")]
-    [SerializeField] AudioClip ExplodeSound;
+    [SerializeField] GameObject BulletSoundInstance;
+    [SerializeField] RandomSounds<AudioClip> ExplodeSound;
     AudioSource audioSource;
 
     /*    public Texture2D textureA;*/
-    private void Start()
+    private void Awake()
     {
         Bounce = 0;
         rb = GetComponent<Rigidbody>();
@@ -60,7 +61,7 @@ public class PaintBall : MonoBehaviour
             return;
 
 
-        if(Bounce > 0)
+        if (Bounce > 0)
         {
             Bounce--;
             float speed = PreviousVelocity.magnitude;
@@ -71,6 +72,7 @@ public class PaintBall : MonoBehaviour
 
         ObjectPoolManager.ReturnObjectToPool(this.gameObject);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
+        ObjectPoolManager.SpawnObject(BulletSoundInstance, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(ExplodeSound.GetRandom());
 
 
         IPaintable paintable = collision.transform.GetComponent<IPaintable>();
@@ -79,20 +81,17 @@ public class PaintBall : MonoBehaviour
             paintable.Hit();
         }
         IDamagable damagable = collision.transform.GetComponent<IDamagable>();
-        if(damagable != null) 
+        if (damagable != null)
         {
             damagable.TakeDamage(Damage);
         }
 
-        audioSource.PlayOneShot(ExplodeSound);
 
-        Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal , -collision.contacts[0].normal);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,1<<LayerMask.NameToLayer("Paintable")))
+        Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal, -collision.contacts[0].normal);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Paintable")))
         {
             Debug.Log(hit.textureCoord);
             hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush[Random.Range(0, PaintBrush.Length)]);
         }
-    }
-
-    
+    }    
 }
