@@ -576,7 +576,10 @@ MonoBehaviour:
   ShootParticle: {fileID: 6262797817512472231, guid: 3d3e884d89800174c9b6cd09a6acb50d,
     type: 3}
   ShootSound:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: d837f6cb2bb508341a22cd31eeb96b11, type: 3}
+    - {fileID: 8300000, guid: 803ccc7631a39364584d377ef7eaf9a9, type: 3}
+    - {fileID: 8300000, guid: 4b767a0791cf30548bc17c0df9f7f1eb, type: 3}
   ReloadSound:
     Sounds: []
 --- !u!114 &6123221695638957286
