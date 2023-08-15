@@ -140,10 +140,8 @@ public class HandInteractions : MonoBehaviour
     {
         Animator animator = RightHand.GetComponent<Animator>();
         isCoolTime = true;
-        animator.speed = CoolTime / animator.speed;
         animator.Play("Reload");
         yield return new WaitForSecondsRealtime(CoolTime);
-        animator.speed = 1.0f;
         animator.Play("Idle");
         isCoolTime = false;
     }
