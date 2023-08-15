@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class ElevatorScript : EnergyObject
 {
     [SerializeField]
@@ -13,6 +14,10 @@ public class ElevatorScript : EnergyObject
     IEnumerator coroutine;
 
     float deltaTime = 0;
+
+    public GameObject PlayerCharacter;
+
+
 
     void Start()
     {
@@ -50,6 +55,24 @@ public class ElevatorScript : EnergyObject
             this.transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Speed * deltaTime);
             yield return null;
         }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Entered");
+        if (!collision.transform.CompareTag("Player"))
+            return;
+
+        PlayerCharacter = collision.gameObject;
+        PlayerCharacter.transform.SetParent(transform, true);
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        if (!collision.transform.CompareTag("Player"))
+            return;
+
+        PlayerCharacter.transform.SetParent(null);
     }
 
 }
