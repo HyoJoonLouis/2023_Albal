@@ -1407,7 +1407,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1520249558222983971, guid: fb1d6b9b0b2521a4f95be201c7107f0b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb1d6b9b0b2521a4f95be201c7107f0b, type: 3}
 --- !u!4 &229050137182637757 stripped
 Transform:
