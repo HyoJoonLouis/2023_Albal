@@ -1105,17 +1105,17 @@ PrefabInstance:
     - target: {fileID: 1175132644884910227, guid: 14dbe6d593a112441b0fb6ea97d5482e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.28594542
+      value: -0.422
       objectReference: {fileID: 0}
     - target: {fileID: 1175132644884910227, guid: 14dbe6d593a112441b0fb6ea97d5482e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.318
+      value: 2.442
       objectReference: {fileID: 0}
     - target: {fileID: 1175132644884910227, guid: 14dbe6d593a112441b0fb6ea97d5482e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.7761246
+      value: -2.656
       objectReference: {fileID: 0}
     - target: {fileID: 1175132644884910227, guid: 14dbe6d593a112441b0fb6ea97d5482e,
         type: 3}
@@ -1157,25 +1157,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
-    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
-        type: 3}
-      propertyPath: ShootSound.Sounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
-        type: 3}
-      propertyPath: ShootSound.Sounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: d837f6cb2bb508341a22cd31eeb96b11, type: 3}
-    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
-        type: 3}
-      propertyPath: ShootSound.Sounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 803ccc7631a39364584d377ef7eaf9a9, type: 3}
-    - target: {fileID: 3457170341029305271, guid: 14dbe6d593a112441b0fb6ea97d5482e,
-        type: 3}
-      propertyPath: ShootSound.Sounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 4b767a0791cf30548bc17c0df9f7f1eb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14dbe6d593a112441b0fb6ea97d5482e, type: 3}

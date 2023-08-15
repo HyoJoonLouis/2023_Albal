@@ -110,10 +110,10 @@ public class HandInteractions : MonoBehaviour
             currentBulletCount--;
             AmmoMaterial.SetFloat("_Fill", (float)currentBulletCount / MaxBulletCount);
             ChargeTime = 0;
-            TubeMaterial.SetFloat("_Fill", 0);
-            PaintBallInstance = null;
+            TubeMaterial.SetFloat("_Fill", ChargeTime);
             ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation).transform.SetParent(this.gameObject.transform);
             StartCoroutine(SetCoolTime());
+            PaintBallInstance = null;
         }
     }
 
@@ -138,8 +138,13 @@ public class HandInteractions : MonoBehaviour
 
     IEnumerator SetCoolTime()
     {
+        Animator animator = RightHand.GetComponent<Animator>();
         isCoolTime = true;
+        animator.speed = CoolTime / animator.speed;
+        animator.Play("Reload");
         yield return new WaitForSecondsRealtime(CoolTime);
+        animator.speed = 1.0f;
+        animator.Play("Idle");
         isCoolTime = false;
     }
 }
