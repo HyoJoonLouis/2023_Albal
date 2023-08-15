@@ -701,6 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1175132646069530410}
   - component: {fileID: 1175132646069530412}
+  - component: {fileID: 8249248658355712788}
   m_Layer: 0
   m_Name: Right Hand
   m_TagString: Player
@@ -915,6 +916,26 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!95 &8249248658355712788
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175132646069530411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 122d310d26df1004abd1341474a20e60, type: 3}
+  m_Controller: {fileID: 9100000, guid: e2496dc700c04e2468ccd8f1854e0cff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1175132646107522661
 GameObject:
   m_ObjectHideFlags: 0
