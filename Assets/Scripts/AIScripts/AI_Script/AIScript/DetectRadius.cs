@@ -62,8 +62,11 @@ public class DetectRadius : BaseTriggerComp
     public bool DetectTarget(Vector3 Position)
     {
         Vector2 Dir = (new Vector2(Position.x, Position.z) - new Vector2(transform.position.x, transform.position.z)).normalized;
+        float Distance = Vector3.Distance(Position, transform.position);
 
-        if (Vector2.Angle(new Vector2(transform.forward.x * MonsterVisualRadius, transform.forward.z * MonsterVisualRadius), Dir) < MonsterVisualAngle * 0.5f)
+
+        if (Vector2.Angle(new Vector2(transform.forward.x * MonsterVisualRadius, transform.forward.z * MonsterVisualRadius), Dir) < MonsterVisualAngle * 0.5f
+            && Distance < MonsterVisualRadius)
         {
             return true;
         }
