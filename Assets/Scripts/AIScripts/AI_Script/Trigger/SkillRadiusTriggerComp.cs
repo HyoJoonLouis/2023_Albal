@@ -9,7 +9,7 @@ public class SkillRadiusTriggerComp : BaseTriggerComp
     protected override void Awake()
     {
         base.Awake();
-        Controller = transform.root.GetComponent<BaseEnemyController>();
+        Controller = transform.parent.GetComponent<BaseEnemyController>();
     }
 
     protected override void OnTriggerEnter(Collider other)

@@ -1113,16 +1113,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.3613
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.3247
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1171,11 +1161,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007372, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
-        type: 3}
-      propertyPath: AttackType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea0f9115ab32d14697a8bb8c0ec9219, type: 3}
 --- !u!1 &8185929372463907668 stripped
@@ -1206,21 +1191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 8d481834bb2a7f845bd881b7e29199a7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.9458
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 8d481834bb2a7f845bd881b7e29199a7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.9458
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 8d481834bb2a7f845bd881b7e29199a7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.9458
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 8d481834bb2a7f845bd881b7e29199a7,
         type: 3}
@@ -1272,11 +1242,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007372, guid: 8d481834bb2a7f845bd881b7e29199a7,
-        type: 3}
-      propertyPath: AttackType
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d481834bb2a7f845bd881b7e29199a7, type: 3}
 --- !u!1 &8185929372981658712 stripped
@@ -1298,40 +1263,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3461159262726323513}
     m_Modifications:
-    - target: {fileID: 83304290071562354, guid: ad144a08098ab594883fe8fee1c11db8,
-        type: 3}
-      propertyPath: AttackType
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007368, guid: ad144a08098ab594883fe8fee1c11db8,
         type: 3}
       propertyPath: m_Name
       value: SkillEffectRadius_Capsule
       objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007368, guid: ad144a08098ab594883fe8fee1c11db8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: ad144a08098ab594883fe8fee1c11db8,
         type: 3}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: ad144a08098ab594883fe8fee1c11db8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.9458
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: ad144a08098ab594883fe8fee1c11db8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.9458
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: ad144a08098ab594883fe8fee1c11db8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.9458
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: ad144a08098ab594883fe8fee1c11db8,
         type: 3}
@@ -1410,21 +1350,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.4938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.4938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1473,11 +1398,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007372, guid: 518478f21801f9d41a812cbba8008750,
-        type: 3}
-      propertyPath: AttackType
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518478f21801f9d41a812cbba8008750, type: 3}
 --- !u!1 &8185929373622492061 stripped
@@ -1499,35 +1419,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3461159262726323513}
     m_Modifications:
-    - target: {fileID: -5900262186484191542, guid: 836f4a4df86f280448d713df93ba30b0,
-        type: 3}
-      propertyPath: AttackType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007368, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
       propertyPath: m_Name
       value: SkillEffectRadius_Box
       objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007368, guid: 836f4a4df86f280448d713df93ba30b0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.3613
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.3247
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
@@ -1594,40 +1494,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3461159262726323513}
     m_Modifications:
-    - target: {fileID: -6684932699787504212, guid: 0be94f2febb05704287f05aad051edb3,
-        type: 3}
-      propertyPath: AttackType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007368, guid: 0be94f2febb05704287f05aad051edb3,
         type: 3}
       propertyPath: m_Name
       value: SkillEffectRadius_Sphere
       objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007368, guid: 0be94f2febb05704287f05aad051edb3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 0be94f2febb05704287f05aad051edb3,
         type: 3}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 0be94f2febb05704287f05aad051edb3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.4938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 0be94f2febb05704287f05aad051edb3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.4938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4725051603187007371, guid: 0be94f2febb05704287f05aad051edb3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.4938
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 0be94f2febb05704287f05aad051edb3,
         type: 3}

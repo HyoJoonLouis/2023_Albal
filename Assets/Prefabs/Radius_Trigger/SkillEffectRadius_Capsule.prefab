@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8287231301845966945}
   - component: {fileID: -4352756938892793703}
   - component: {fileID: 83304290071562354}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SkillEffectRadius_Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4725051603187007368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9458, y: 1.9458, z: 1.9458}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,3 +129,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsRender: 1
+  AttackType: 3
