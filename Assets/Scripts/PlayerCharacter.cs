@@ -7,7 +7,7 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
 {
     [Header("Stat")]
     [SerializeField] float MaxHp;
-    float currentHp;
+    [SerializeField] float currentHp;
 
     [Header("Check Point")]
     Transform CurrentCheckPoint;

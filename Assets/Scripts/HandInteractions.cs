@@ -13,6 +13,9 @@ public class HandInteractions : MonoBehaviour
     bool isAButtonPressed = false;
 
     [Header("Left Hand Actions")]
+    [SerializeField] InputActionProperty MovementProperty;
+    CharacterController rb;
+
     [SerializeField] InputActionProperty BounceProperty;
 
     [Header("Adjustments")]
@@ -62,15 +65,18 @@ public class HandInteractions : MonoBehaviour
         AmmoMaterial = GameObject.Find("Sphere002").GetComponent<Renderer>().material;
         TubeMaterial = GameObject.Find("Tube002").GetComponent<Renderer>().material;
         audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         float ChargeValue = ShootProperty.action.ReadValue<float>();
         float ChangePaintValue = ChangePaintProperty.action.ReadValue<float>();
         float BouncePropertyValue = BounceProperty.action.ReadValue<float>();
 
+        Move();
         if (ChangePaintValue >= 0.8f && isAButtonPressed == false)
         {
             isAButtonPressed = true;
@@ -144,6 +150,12 @@ public class HandInteractions : MonoBehaviour
         yield return new WaitForSecondsRealtime(CoolTime);
         animator.Play("Idle");
         isCoolTime = false;
+    }
+
+    private void Move() {
+
+        Vector2 Movement = MovementProperty.action.ReadValue<Vector2>();
+        rb.Move(new Vector3(Movement.x, 0, Movement.y));
     }
 
 }
