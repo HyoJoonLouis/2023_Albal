@@ -14,11 +14,11 @@ TagManager:
   - Water
   - UI
   - Paintable
-  - 
-  - 
-  - 
-  - 
-  - 
+  - SkillRadiusTrigger
+  - Player
+  - AI
+  - PlayerProjectile
+  - AIProjectile
   - 
   - 
   - 
