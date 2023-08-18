@@ -93,11 +93,11 @@ public class HandInteractions : MonoBehaviour
             PaintBallInstance.SetBounce(1);
         }
 
-/*        if (ChargeValue > 0.8f && ChargeTime == 0)
+        if (ChargeValue > 0.8f && ChargeTime == 0)
         {
             PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, -9999, -9999), this.transform.rotation).GetComponent<PaintBall>();
-*//*            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();*//*
-        }*/
+            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();
+        }
         if (ChargeValue > 0.8f)
         {
             ChargeTime = Mathf.Clamp(ChargeTime += Time.unscaledDeltaTime, 0, MaxChargeTime);
@@ -105,7 +105,6 @@ public class HandInteractions : MonoBehaviour
         }
         if (ChargeValue < 0.2f && ChargeTime != 0)
         {
-            PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[0], ShootPosition.forward, ShootPosition.rotation).GetComponent<PaintBall>();
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             audioSource.PlayOneShot(ShootSound.GetRandom());
             currentBulletCount--;
@@ -146,4 +145,5 @@ public class HandInteractions : MonoBehaviour
         animator.Play("Idle");
         isCoolTime = false;
     }
+
 }
