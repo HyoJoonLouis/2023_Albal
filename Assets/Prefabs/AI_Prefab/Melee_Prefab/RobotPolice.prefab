@@ -191,6 +191,8 @@ MonoBehaviour:
   EnemyCurrentHP: 100
   OriginMovementSpeed: 100
   ChaseSpeed: 100
+  animator: {fileID: 7013971637310213235}
+  CurrentAnimType: 0
 --- !u!114 &3461159262726323519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,8 +209,7 @@ MonoBehaviour:
   AIRotate: {fileID: 309486164}
   CurrentAttackType: 0
   DetectRadius: {fileID: 3461159262009815920}
-  animator: {fileID: 7013971637310213235}
-  CurrentAnimType: 0
+  Owner: {fileID: 3461159262726323516}
 --- !u!114 &309486165
 MonoBehaviour:
   m_ObjectHideFlags: 0

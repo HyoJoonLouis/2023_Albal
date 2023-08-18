@@ -14,8 +14,6 @@ public enum ERobotAnimType
 public class RobotPoliceController : BaseEnemyController
 {    
     [SerializeField] private DetectRadius DetectRadius;
-    [SerializeField] private Animator animator;
-    [HideInInspector]public ERobotAnimType CurrentAnimType;
 
     protected override void Start()
     {
@@ -27,19 +25,13 @@ public class RobotPoliceController : BaseEnemyController
 
         StartCoroutine(DetectTarget());
 
-        SetAnimationType(ERobotAnimType.IDLE);
-    }
-
-    public void SetAnimationType(ERobotAnimType type)
-    {
-        CurrentAnimType = type;
-        animator.SetInteger("AnimationType", (int)CurrentAnimType);
+        Owner.SetAnimationType(ERobotAnimType.IDLE);
     }
 
     public override void EnableSkillDetectTrigger(AttackType attackType)
     {
         base.EnableSkillDetectTrigger(attackType);
-        SetAnimationType(ERobotAnimType.ATTACK);
+        Owner.SetAnimationType(ERobotAnimType.ATTACK);
     }
 
     public override void SetCurrentAttackType(AttackType attackType)
@@ -50,7 +42,7 @@ public class RobotPoliceController : BaseEnemyController
     public override void EndOfSkill(AttackType attackType)
     {
         AIMovement.StartMove();
-        SetAnimationType(ERobotAnimType.RUN);
+        Owner.SetAnimationType(ERobotAnimType.RUN);
     }
 
     private IEnumerator DetectTarget()
@@ -62,11 +54,11 @@ public class RobotPoliceController : BaseEnemyController
             if (IsDetectTarget)
             {
                 AIMovement.StartMove();
-                SetAnimationType(ERobotAnimType.RUN);
+                Owner.SetAnimationType(ERobotAnimType.RUN);
             }
             else
             {
-                SetAnimationType(ERobotAnimType.ALERT);
+                Owner.SetAnimationType(ERobotAnimType.ALERT);
             }
 
             yield return null;

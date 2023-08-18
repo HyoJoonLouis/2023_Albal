@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d51d48881a4eb45831142036e75413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 1936955852}
   TargetObject: {fileID: 0}
   AIRotate: {fileID: 5216548384193223613}
   CurrentAttackType: 0
@@ -98,6 +99,8 @@ MonoBehaviour:
   EnemyCurrentHP: 100
   OriginMovementSpeed: 0
   ChaseSpeed: 0
+  animator: {fileID: 799470704}
+  CurrentAnimType: 0
   EnemyProjectile: {fileID: 6628283256000011167, guid: 53501eaab60230e45a33908878ae4cbd,
     type: 3}
   ProjectileOriginTransform: {fileID: 5511913231636522779}
@@ -196,6 +199,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5473147451781480688}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &799470704
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131270468321951137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a299e674eeb4f14448eecbd7a0b2e03e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &5216548384193223613
 MonoBehaviour:
   m_ObjectHideFlags: 0

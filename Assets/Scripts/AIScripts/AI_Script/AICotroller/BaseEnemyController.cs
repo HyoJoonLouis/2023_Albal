@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseEnemyController : MonoBehaviour
 {
-    protected BaseEnemyCharacter OwnerObject;
+    [SerializeField] protected BaseEnemyCharacter Owner;
 
     [SerializeField] protected GameObject TargetObject;
     [SerializeField] protected AIRotate AIRotate;
@@ -22,13 +22,12 @@ public class BaseEnemyController : MonoBehaviour
 
     protected virtual void Start()
     {
-        OwnerObject = GetComponent<BaseEnemyCharacter>();
         AIMovement = GetComponent<AIMovement>();
     }
 
     public virtual void EnableSkillDetectTrigger(AttackType attackType)
     {
-        if (OwnerObject.UseSkill(attackType))
+        if (Owner.UseSkill(attackType))
         {
             if(AIMovement)
             {

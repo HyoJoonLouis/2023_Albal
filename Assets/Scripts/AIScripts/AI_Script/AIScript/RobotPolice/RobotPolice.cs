@@ -19,6 +19,15 @@ public class RobotPolice : BaseEnemyCharacter
         return base.UseSkill(attackType);
     }
 
+    public override void TakeDamage(float Damage)
+    {
+        base.TakeDamage(Damage);
+        if(EnemyCurrentHP <= 0)
+        {
+            SetAnimationType(ERobotAnimType.DEAD);
+        }
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();

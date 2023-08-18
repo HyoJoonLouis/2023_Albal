@@ -22,6 +22,10 @@ public class BaseEnemyCharacter : BaseCharacter
     [SerializeField] protected float OriginMovementSpeed;
     [SerializeField] protected float ChaseSpeed;
 
+    [SerializeField] private Animator animator;
+
+    [HideInInspector] public ERobotAnimType CurrentAnimType;
+
     public delegate void AIStateFunc();
 
     public Dictionary<AttackType, EnemySkillComp> SkillCompDict =
@@ -44,6 +48,12 @@ public class BaseEnemyCharacter : BaseCharacter
         }
     }
 
+    public void SetAnimationType(ERobotAnimType type)
+    {
+        CurrentAnimType = type;
+        animator.SetInteger("AnimationType", (int)CurrentAnimType);
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -52,6 +62,11 @@ public class BaseEnemyCharacter : BaseCharacter
     protected override void Update()
     {
         base.Update();
+    }
+
+    public virtual void TakeDamage(float Damage)
+    {
+        EnemyCurrentHP -= Damage;
     }
 
     public virtual bool UseSkill(AttackType attackType)
