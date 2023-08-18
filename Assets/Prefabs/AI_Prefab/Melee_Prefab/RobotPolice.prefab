@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3461159262009815926}
   - component: {fileID: 3461159262009815921}
   - component: {fileID: 3461159262009815920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DetectViewTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3461159262009815922}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2026034097987277247}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &3461159262009815926
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 239378781582670930, guid: 778f5d19b46817e4cb045e450991d2d7, type: 3}
+  - {fileID: 2100000, guid: f91e891fac129764b8ce3b7fe7b659be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dbce51eb1370543aff17acd68a3c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsRender: 0
+  IsRender: 1
   MonsterVisualRadius: 30
   MonsterVisualAngle: 90
 --- !u!1 &3461159262726323512
@@ -159,22 +159,10 @@ MonoBehaviour:
     SkillInfoList:
     - attackType: 1
       SkillAttackDamage: 10
-      MaxCoolTime: 10
+      MaxCoolTime: 3
       HaveCoolTimeWhenStart: 0
-      SkillAnimationTime: 3
+      SkillAnimationTime: 1.567
       SkillUseRadius: {fileID: 8185929372463907668}
-    - attackType: 2
-      SkillAttackDamage: 10
-      MaxCoolTime: 10
-      HaveCoolTimeWhenStart: 0
-      SkillAnimationTime: 3
-      SkillUseRadius: {fileID: 8185929373622492061}
-    - attackType: 3
-      SkillAttackDamage: 10
-      MaxCoolTime: 10
-      HaveCoolTimeWhenStart: 0
-      SkillAnimationTime: 3
-      SkillUseRadius: {fileID: 8185929372981658712}
 --- !u!114 &3461159262726323516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,11 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d32b1217b552449a0a7afe57aed802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 3461159262726323516}
   TargetObject: {fileID: 0}
   AIRotate: {fileID: 309486164}
   CurrentAttackType: 0
   DetectRadius: {fileID: 3461159262009815920}
-  Owner: {fileID: 3461159262726323516}
 --- !u!114 &309486165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +392,7 @@ PrefabInstance:
     - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.14411
+      value: 1.0072744
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
         type: 3}
@@ -419,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4559999
+      value: 0.8399987
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 1ea0f9115ab32d14697a8bb8c0ec9219,
         type: 3}
@@ -544,12 +532,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d481834bb2a7f845bd881b7e29199a7, type: 3}
---- !u!1 &8185929372981658712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4725051603187007368, guid: 8d481834bb2a7f845bd881b7e29199a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 3461159261963025360}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8185929372981658715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4725051603187007371, guid: 8d481834bb2a7f845bd881b7e29199a7,
@@ -710,12 +692,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518478f21801f9d41a812cbba8008750, type: 3}
---- !u!1 &8185929373622492061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4725051603187007368, guid: 518478f21801f9d41a812cbba8008750,
-    type: 3}
-  m_PrefabInstance: {fileID: 3461159262601716757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8185929373622492062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
@@ -729,6 +705,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3461159262726323513}
     m_Modifications:
+    - target: {fileID: -5900262186484191542, guid: 836f4a4df86f280448d713df93ba30b0,
+        type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007368, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
       propertyPath: m_Name
@@ -747,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.14411
+      value: 1.0072744
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
@@ -762,7 +743,7 @@ PrefabInstance:
     - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.456
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 836f4a4df86f280448d713df93ba30b0,
         type: 3}
