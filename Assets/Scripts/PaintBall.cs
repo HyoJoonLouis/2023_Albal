@@ -60,6 +60,7 @@ public class PaintBall : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
             return;
 
+        Debug.Log(collision.transform.name);
 
         if (Bounce > 0)
         {
