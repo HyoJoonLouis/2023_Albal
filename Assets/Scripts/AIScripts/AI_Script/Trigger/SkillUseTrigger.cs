@@ -22,7 +22,10 @@ public class SkillUseTrigger : BaseTriggerComp
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
+<<<<<<< HEAD
         TargetObject = other.gameObject;
+=======
+>>>>>>> parent of ab08694 (.)
     }
 
     protected override void OnTriggerExit(Collider other)

@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     [SerializeField] private float ProjectileSpeed;
-    [SerializeField] private float ProjectileDamage;
+    private void Start()
+    {
+        
+    }
 
     public void InitProjectile(Vector3 StartPos, Quaternion Rotation)
     {
@@ -20,13 +23,6 @@ public class EnemyProjectile : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject);
-        other.GetComponent<IDamagable>().TakeDamage(ProjectileDamage);
-    }
-
-    IEnumerator StartLifeTime()
-    {
-        yield return new WaitForSeconds(5.0f);
         Destroy(this.gameObject);
     }
 }

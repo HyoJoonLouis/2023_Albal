@@ -12,7 +12,7 @@ public enum AttackType
 }
 
 
-public class BaseEnemyCharacter : BaseCharacter, IDamagable
+public class BaseEnemyCharacter : BaseCharacter
 {
     [Header("Character HP")]
     [SerializeField] protected float EnemyMaxHP;
@@ -64,10 +64,10 @@ public class BaseEnemyCharacter : BaseCharacter, IDamagable
         base.Update();
     }
 
-    //public virtual void TakeDamage(float Damage)
-    //{
-    //    EnemyCurrentHP -= Damage;
-    //}
+    public virtual void TakeDamage(float Damage)
+    {
+        EnemyCurrentHP -= Damage;
+    }
 
     public virtual bool UseSkill(AttackType attackType)
     {
@@ -77,14 +77,5 @@ public class BaseEnemyCharacter : BaseCharacter, IDamagable
             return true;
         }
         return false;
-    }
-
-    public void TakeDamage(float value)
-    {
-        EnemyCurrentHP -= value;
-        if(EnemyCurrentHP <= 0)
-        {
-            SetAnimationType(ERobotAnimType.DEAD);
-        }
     }
 }

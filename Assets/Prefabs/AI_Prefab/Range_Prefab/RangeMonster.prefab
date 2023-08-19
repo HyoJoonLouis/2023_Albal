@@ -35,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 2974356219620415515}
   - {fileID: 5511913231636522779}
+  - {fileID: 2974356219620415515}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,10 +251,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkillRadius_Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 4725051603187007370, guid: 518478f21801f9d41a812cbba8008750,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 0
+=======
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 19.5
+>>>>>>> parent of ab08694 (.)
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
@@ -278,17 +303,17 @@ PrefabInstance:
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4725051603187007371, guid: 518478f21801f9d41a812cbba8008750,
         type: 3}
@@ -304,6 +329,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725051603187007372, guid: 518478f21801f9d41a812cbba8008750,
+        type: 3}
+      propertyPath: IsRender
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725051603187007372, guid: 518478f21801f9d41a812cbba8008750,
+        type: 3}
+      propertyPath: AttackType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518478f21801f9d41a812cbba8008750, type: 3}
