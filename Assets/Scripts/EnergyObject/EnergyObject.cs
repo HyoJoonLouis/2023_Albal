@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class EnergyObject : MonoBehaviour
 {
-    ButtonScript[] Buttons;
-
-    public virtual void Start()
-    {
-        Buttons = GetComponentsInChildren<ButtonScript>();
-    }
+    [SerializeField] ButtonScript[] Buttons;
 
     public bool CheckButtonsHit()
     {

@@ -6,9 +6,8 @@ public class DoorScript : EnergyObject
 {
     Animator animator;
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
         animator = GetComponent<Animator>();
     }
 

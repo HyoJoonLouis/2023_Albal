@@ -8,8 +8,8 @@ public class ElevatorScript : EnergyObject
     [SerializeField]
     float Speed;
 
-    Transform StartPosition;
-    Transform EndPosition;
+    [SerializeField] Transform StartPosition;
+    [SerializeField] Transform EndPosition;
 
     IEnumerator coroutine;
 
@@ -17,15 +17,6 @@ public class ElevatorScript : EnergyObject
 
     public GameObject PlayerCharacter;
 
-
-
-    public override void Start()
-    {
-        base.Start();
-        StartPosition = transform.Find("StartPosition");
-        EndPosition = transform.Find("EndPosition");
-        transform.DetachChildren();
-    }
 
     private void Update()
     {
@@ -59,19 +50,15 @@ public class ElevatorScript : EnergyObject
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Entered");
-        if (!collision.transform.CompareTag("Player"))
-            return;
-
+        Debug.Log("Player Enter" + collision.transform.tag);
+        Debug.Log(collision.transform.name);
         PlayerCharacter = collision.gameObject;
         PlayerCharacter.transform.SetParent(transform, true);
     }
 
     public void OnCollisionExit(Collision collision)
     {
-        if (!collision.transform.CompareTag("Player"))
-            return;
-
+        Debug.Log("Player Out");
         PlayerCharacter.transform.SetParent(null);
     }
 

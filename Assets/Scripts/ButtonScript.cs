@@ -13,13 +13,10 @@ public class ButtonScript : MonoBehaviour, IPaintable
     [SerializeField] Material ActivateMaterial;
     [SerializeField] Material DeactivateMaterial;
     
-    [HideInInspector]public bool isHit;
-    EnergyObject EnergyObject;
+    [HideInInspector] public bool isHit;
+    [SerializeField] EnergyObject EnergyObject;
 
-    public void Start()
-    {
-        EnergyObject = GetComponentInParent<EnergyObject>();
-    }
+
     public void Hit()
     {
         if (isHit == true)
@@ -32,7 +29,7 @@ public class ButtonScript : MonoBehaviour, IPaintable
         Invoke("Deactivate", DeactivateTime);
         if (EnergyObject.CheckButtonsHit())
         {
-            EnergyObject.Activate();
+            EnergyObject?.Activate();
         }
     }
 

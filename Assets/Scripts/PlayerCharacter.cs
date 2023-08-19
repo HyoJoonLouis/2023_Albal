@@ -10,14 +10,18 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
     [SerializeField] float currentHp;
 
     [Header("Check Point")]
-    Transform CurrentCheckPoint;
+    [SerializeField] Transform CurrentCheckPoint;
+
+    [Header("UI")]
+    [SerializeField] Animator GameOverUI;
 
     public void TakeDamage(float value)
     {
         currentHp -= value;
         if (currentHp < 0)
         {
-            
+            GameOverUI.Play("Open");
+            Time.timeScale = 0.0f;
         }
     }
 
@@ -34,5 +38,6 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
     public void SpawnCharacter()
     {
         this.transform.position = CurrentCheckPoint.position;
+        Time.timeScale = 1.0f;
     }
 }
