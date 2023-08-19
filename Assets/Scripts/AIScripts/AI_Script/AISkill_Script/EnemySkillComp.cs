@@ -18,7 +18,7 @@ public class EnemySkillComp : MonoBehaviour
 
     [HideInInspector] public bool IsCoolDown;
 
-    public void SetSkillInfo(AttackType type, float _SkillAttackDamage, float _SkillAnimationTime, GameObject _SkillUseRadius, float _MaxCoolTime, bool _HaveCoolTimeWhenStart)
+    public void SetSkillInfo(AttackType type, float _SkillAttackDamage, float _SkillAnimationTime, GameObject _SkillUseRadius, float _MaxCoolTime, bool _HaveCoolTimeWhenStart, float _DamageTime)
     {
         attackType = type;
         SkillAttackDamage = _SkillAttackDamage;
@@ -37,6 +37,7 @@ public class EnemySkillComp : MonoBehaviour
     {
         SkillUseRadius.SetActive(true);
         StartCoroutine(StartCoolDown());
+        StartCoroutine(StartCoolDown());
         StartCoroutine(StartAnimationTimer());
     }
 
@@ -47,6 +48,12 @@ public class EnemySkillComp : MonoBehaviour
         IsCoolDown = false;
         if(attackType == Controller.CurrentAttackType)
         Controller.EnableSkillDetectTrigger(attackType);
+    }
+
+    IEnumerator StartDamageTimer()
+    {
+        yield return new WaitForSeconds(DamageTime);
+        if()
     }
 
     IEnumerator StartAnimationTimer()
