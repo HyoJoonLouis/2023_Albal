@@ -15,12 +15,11 @@ public class BaseEnemyController : MonoBehaviour
     protected Vector3 StartPosition;
     [HideInInspector] public AttackType CurrentAttackType;
 
+
     public bool SetDetectTarget
     {
         set { SetDetectTarget = value; }
     }
-
-    public IDamagable PlayerDamagable;
 
     protected virtual void Start()
     {
@@ -29,9 +28,8 @@ public class BaseEnemyController : MonoBehaviour
 
     public virtual void EnableSkillDetectTrigger(AttackType attackType)
     {
-        if (Owner.UseSkill(attackType) && PlayerDamagable != null)
+        if (Owner.UseSkill(attackType))
         {
-            PlayerDamagable.TakeDamage(Owner)
             if(AIMovement)
             {
                 AIMovement.StopMove();
@@ -47,4 +45,5 @@ public class BaseEnemyController : MonoBehaviour
     public virtual void EndOfSkill(AttackType attackType)
     {
     }
+
 }

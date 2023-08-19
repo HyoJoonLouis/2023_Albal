@@ -16,46 +16,19 @@ public class EnemySkillComp : MonoBehaviour
     private float MaxCoolTime;
     private float SkillAnimationTime;
 
-    [HideInInspector] public bool IsCoolDown;
-
-    public void SetSkillInfo(AttackType type, float _SkillAttackDamage, float _SkillAnimationTime, GameObject _SkillUseRadius, float _MaxCoolTime, bool _HaveCoolTimeWhenStart, float _DamageTime)
+    public void SetSkillInfo(AttackType type, float _SkillAttackDamage, float _SkillAnimationTime, GameObject _SkillUseRadius)
     {
         attackType = type;
         SkillAttackDamage = _SkillAttackDamage;
         SkillUseRadius = _SkillUseRadius;
-        MaxCoolTime = _MaxCoolTime;
-        IsCoolDown =  _HaveCoolTimeWhenStart;
         SkillAnimationTime = _SkillAnimationTime;
         Controller = GetComponent<BaseEnemyController>();
-        if (IsCoolDown)
-        {
-            StartCoolDown();
-        }
     }
 
     public void EnableSkill()
     {
         SkillUseRadius.SetActive(true);
-        StartCoroutine(StartCoolDown());
-        StartCoroutine(StartAnimationTimer());
-    }
-
-    IEnumerator StartCoolDown()
-    {
-        IsCoolDown = true;
-        yield return new WaitForSeconds(MaxCoolTime);
-        IsCoolDown = false;
-        if(attackType == Controller.CurrentAttackType)
-        {
-            StartCoroutine(SkillUseRadius.GetComponent<SkillUseTrigger>().StartDamageTimer());
-            Controller.EnableSkillDetectTrigger(attackType);
-        }
     }
 
 
-    IEnumerator StartAnimationTimer()
-    {
-        yield return new WaitForSeconds(SkillAnimationTime);
-        Controller.EndOfSkill(attackType);
-    }
 }

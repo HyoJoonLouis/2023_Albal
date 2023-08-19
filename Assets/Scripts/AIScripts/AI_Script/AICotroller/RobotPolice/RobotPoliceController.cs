@@ -15,6 +15,7 @@ public class RobotPoliceController : BaseEnemyController
 {    
     [SerializeField] private DetectRadius DetectRadius;
 
+
     protected override void Start()
     {
         base.Start();
