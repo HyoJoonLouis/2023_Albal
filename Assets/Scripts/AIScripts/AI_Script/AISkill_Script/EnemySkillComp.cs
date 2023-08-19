@@ -37,7 +37,6 @@ public class EnemySkillComp : MonoBehaviour
     {
         SkillUseRadius.SetActive(true);
         StartCoroutine(StartCoolDown());
-        StartCoroutine(StartCoolDown());
         StartCoroutine(StartAnimationTimer());
     }
 
@@ -47,14 +46,12 @@ public class EnemySkillComp : MonoBehaviour
         yield return new WaitForSeconds(MaxCoolTime);
         IsCoolDown = false;
         if(attackType == Controller.CurrentAttackType)
-        Controller.EnableSkillDetectTrigger(attackType);
+        {
+            StartCoroutine(SkillUseRadius.GetComponent<SkillUseTrigger>().StartDamageTimer());
+            Controller.EnableSkillDetectTrigger(attackType);
+        }
     }
 
-    IEnumerator StartDamageTimer()
-    {
-        yield return new WaitForSeconds(DamageTime);
-        if()
-    }
 
     IEnumerator StartAnimationTimer()
     {

@@ -12,12 +12,12 @@ public class SkillUseTrigger : BaseTriggerComp
     private GameObject TargetObject;
 
 
-    IEnumerator StartDamageTimer()
+    public IEnumerator StartDamageTimer()
     {
         yield return new WaitForSeconds(AffectDamageTime);
+
         if (TargetObject != null)
             TargetObject.GetComponent<IDamagable>().TakeDamage(Damage);
-        StartCoroutine(StartDamageTimer());
     }
 
     protected override void Awake()
@@ -29,12 +29,10 @@ public class SkillUseTrigger : BaseTriggerComp
     {
         base.OnTriggerEnter(other);
         TargetObject = other.gameObject;
-        StartCoroutine(StartDamageTimer());
     }
     protected override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
         TargetObject = null;
-        StopCoroutine(StartDamageTimer());
     }
 }
