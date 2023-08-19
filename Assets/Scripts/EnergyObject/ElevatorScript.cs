@@ -19,7 +19,7 @@ public class ElevatorScript : EnergyObject
 
 
 
-    void Start()
+    public override void Start()
     {
         base.Start();
         StartPosition = transform.Find("StartPosition");

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1004955717}
   - component: {fileID: 1004955716}
   - component: {fileID: 1004955715}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1175132644741065816}
   - component: {fileID: 1175132644741065817}
   - component: {fileID: 1175132644741065798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 1175132644877750300}
   - component: {fileID: 1175132644877750289}
   - component: {fileID: 1175132644877750302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Hand Model
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 3457170341029305271}
   - component: {fileID: 6123221695638957286}
   - component: {fileID: 61783636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XR Origin
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -595,6 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHp: 100
+  currentHp: 0
 --- !u!82 &61783636
 AudioSource:
   m_ObjectHideFlags: 0
@@ -702,7 +703,7 @@ GameObject:
   - component: {fileID: 1175132646069530410}
   - component: {fileID: 1175132646069530412}
   - component: {fileID: 8249248658355712788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Hand
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -946,7 +947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1175132646107522660}
   - component: {fileID: 1175132646107522663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Hand
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1169,7 +1170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1175132646422772488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera Offset
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1203,7 +1204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7851542631307274109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Hand Model
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1237,7 +1238,7 @@ GameObject:
   - component: {fileID: 5693873943237487823}
   - component: {fileID: 5703857506058283577}
   - component: {fileID: 1784495943527807448}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Subtitle
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1368,6 +1369,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7851542631307274109}
     m_Modifications:
+    - target: {fileID: 1449923133625003098, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583689781266705444, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709609281285968279, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796724799658378808, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238529224840500195, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182210002818728430, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6959881459522766510, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1427,6 +1458,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772553126973725716, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606586204532389634, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781360792961556632, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960546921256776918, guid: fb1d6b9b0b2521a4f95be201c7107f0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1520249558222983971, guid: fb1d6b9b0b2521a4f95be201c7107f0b, type: 3}

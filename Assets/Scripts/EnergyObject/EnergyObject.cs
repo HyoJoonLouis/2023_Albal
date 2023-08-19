@@ -6,7 +6,7 @@ public class EnergyObject : MonoBehaviour
 {
     ButtonScript[] Buttons;
 
-    public void Start()
+    public virtual void Start()
     {
         Buttons = GetComponentsInChildren<ButtonScript>();
     }

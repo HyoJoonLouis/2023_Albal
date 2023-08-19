@@ -35,7 +35,6 @@ public class RandomSounds<T>
     {
         if(Sounds.Count == 0)
         {
-            Debug.Log("No Sound in List");
             return PreviousSound;
         }
 
@@ -44,7 +43,6 @@ public class RandomSounds<T>
         if(PreviousSound != null)
             Sounds.Add(PreviousSound);
         PreviousSound = UsedSound;
-        Debug.Log(UsedSound);
         return UsedSound;
     }
 }
