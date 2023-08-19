@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LandMarkSript : MonoBehaviour
+public class LandMarkDoorSript : MonoBehaviour
 {
     Animator animator;
 
@@ -15,6 +15,11 @@ public class LandMarkSript : MonoBehaviour
     {
         if (!other.transform.CompareTag("Player"))
             return;
+        animator.Play("Open");
+    }
+
+    public void Open()
+    {
         animator.Play("Open");
     }
 }

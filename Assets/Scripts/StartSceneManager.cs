@@ -7,7 +7,9 @@ public class StartSceneManager : MonoBehaviour
 {
     public void OnStartButton()
     {
-        SceneManager.LoadScene(1);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
+        asyncOperation.allowSceneActivation = true;
+
     }
 
     public void OnOptionButton()
