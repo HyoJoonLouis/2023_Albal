@@ -38,6 +38,7 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
     public void SpawnCharacter()
     {
         this.transform.position = CurrentCheckPoint.position;
+
         Time.timeScale = 1.0f;
     }
 }
