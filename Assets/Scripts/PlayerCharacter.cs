@@ -20,8 +20,7 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
         currentHp -= value;
         if (currentHp < 0)
         {
-            GameOverUI.Play("Open");
-            Time.timeScale = 0.0f;
+            GameOverUI.PlayInFixedTime("Open");
         }
     }
 
@@ -39,6 +38,5 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
     {
         this.transform.position = CurrentCheckPoint.position;
 
-        Time.timeScale = 1.0f;
     }
 }

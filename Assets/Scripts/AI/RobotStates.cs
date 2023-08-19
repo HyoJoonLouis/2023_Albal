@@ -38,14 +38,23 @@ public class RobotStates
 
     private void Run(Animator animator, NavMeshAgent agent, Vector3 target)
     {
-        animator.Play("Run");
+        animator.SetBool("AttackToRun", true);
         agent.enabled = true;
         agent.SetDestination(target);
     }
 
     private void Attack(Animator animator, NavMeshAgent agent)
     {
+        animator.SetBool("AttackToRun", false);
         agent.enabled = false;
         animator.Play("Attack");
+    }
+
+    public void UpdateState(NavMeshAgent agent, Vector3 target)
+    {
+        if(state == RobotState.attack)
+        {
+            agent.SetDestination(target);
+        }
     }
 }

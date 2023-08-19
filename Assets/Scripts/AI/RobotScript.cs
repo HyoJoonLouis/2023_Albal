@@ -45,7 +45,8 @@ public class RobotScript : MonoBehaviour, IDamagable
         {
             state.ChangeState(RobotState.watching, animator, agent, Vector3.zero);
         }
-       
+
+        state.UpdateState(agent, targetDetectScript.Target.transform.position);
     }
 
     public void SetTriggerOn()
