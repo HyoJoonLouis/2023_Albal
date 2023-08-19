@@ -889,7 +889,7 @@ MonoBehaviour:
   MaxHp: 100
   currentHp: 0
   CurrentCheckPoint: {fileID: 0}
-  GameOverUI: {fileID: 0}
+  GameOverUI: {fileID: 1241898005}
 --- !u!82 &61783636
 AudioSource:
   m_ObjectHideFlags: 0
