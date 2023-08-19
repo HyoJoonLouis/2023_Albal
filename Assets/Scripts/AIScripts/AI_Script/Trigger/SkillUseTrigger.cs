@@ -7,6 +7,18 @@ public class SkillUseTrigger : BaseTriggerComp
 {
     [SerializeField] private AttackType AttackType;
     [SerializeField] private float Damage;
+    [SerializeField] private float AffectDamageTime;
+
+    private GameObject TargetObject;
+
+
+    IEnumerator StartDamageTimer()
+    {
+        yield return new WaitForSeconds(AffectDamageTime);
+        if (TargetObject != null)
+            TargetObject.GetComponent<IDamagable>().TakeDamage(Damage);
+        StartCoroutine(StartDamageTimer());
+    }
 
     protected override void Awake()
     {
@@ -16,10 +28,13 @@ public class SkillUseTrigger : BaseTriggerComp
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        other.GetComponent<IDamagable>().TakeDamage(Damage);
+        TargetObject = other.gameObject;
+        StartCoroutine(StartDamageTimer());
     }
     protected override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
+        TargetObject = null;
+        StopCoroutine(StartDamageTimer());
     }
 }

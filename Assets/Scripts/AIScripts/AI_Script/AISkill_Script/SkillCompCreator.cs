@@ -14,6 +14,8 @@ public struct SkillInfo
     public bool HaveCoolTimeWhenStart;
     [Header("Skill Animation Time")]
     public float SkillAnimationTime;
+    [Header("Damage Affect Time")]
+    public float DamageTime;
 
     [Header("Skill Radius Trigger (Need Trigger Prefabs)")]
     public GameObject SkillUseRadius;
@@ -37,7 +39,7 @@ public class SkillCompCreator : MonoBehaviour
             EnemySkillComp CreateComp = gameObject.AddComponent<EnemySkillComp>();
             CreateComp.SetSkillInfo(SkillInfoStr.SkillInfoList[i].attackType,
                 SkillInfoStr.SkillInfoList[i].SkillAttackDamage, SkillInfoStr.SkillInfoList[i].SkillAnimationTime, SkillInfoStr.SkillInfoList[i].SkillUseRadius,
-                SkillInfoStr.SkillInfoList[i].MaxCoolTime, SkillInfoStr.SkillInfoList[i].HaveCoolTimeWhenStart);
+                SkillInfoStr.SkillInfoList[i].MaxCoolTime, SkillInfoStr.SkillInfoList[i].HaveCoolTimeWhenStart, SkillInfoStr.SkillInfoList[i].DamageTime);
         }
 
         SkillInfoStr.SkillInfoList.Clear();
