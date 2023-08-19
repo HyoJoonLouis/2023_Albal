@@ -38,7 +38,7 @@ public class SkillCompCreator : MonoBehaviour
         {
             EnemySkillComp CreateComp = gameObject.AddComponent<EnemySkillComp>();
             CreateComp.SetSkillInfo(SkillInfoStr.SkillInfoList[i].attackType,
-                SkillInfoStr.SkillInfoList[i].SkillAttackDamage, SkillInfoStr.SkillInfoList[i].SkillAnimationTime, SkillInfoStr.SkillInfoList[i].SkillUseRadius,);
+                SkillInfoStr.SkillInfoList[i].SkillAttackDamage, SkillInfoStr.SkillInfoList[i].SkillAnimationTime, SkillInfoStr.SkillInfoList[i].SkillUseRadius);
         }
 
         SkillInfoStr.SkillInfoList.Clear();
