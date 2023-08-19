@@ -20,6 +20,8 @@ public class BaseEnemyController : MonoBehaviour
         set { SetDetectTarget = value; }
     }
 
+    public IDamagable PlayerDamagable;
+
     protected virtual void Start()
     {
         AIMovement = GetComponent<AIMovement>();
@@ -27,8 +29,9 @@ public class BaseEnemyController : MonoBehaviour
 
     public virtual void EnableSkillDetectTrigger(AttackType attackType)
     {
-        if (Owner.UseSkill(attackType))
+        if (Owner.UseSkill(attackType) && PlayerDamagable != null)
         {
+            PlayerDamagable.TakeDamage(Owner)
             if(AIMovement)
             {
                 AIMovement.StopMove();
