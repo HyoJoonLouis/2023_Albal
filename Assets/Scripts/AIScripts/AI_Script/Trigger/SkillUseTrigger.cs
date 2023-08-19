@@ -6,12 +6,15 @@ using UnityEngine;
 public class SkillUseTrigger : BaseTriggerComp
 {
     [SerializeField] private AttackType AttackType;
+<<<<<<< HEAD
     [SerializeField] private float Damage;
     [SerializeField] private float AffectDamageTime;
 
     private GameObject TargetObject;
 
     private BaseEnemyController Controller;
+=======
+>>>>>>> parent of 193311c (.)
 
     protected override void Awake()
     {
@@ -23,9 +26,13 @@ public class SkillUseTrigger : BaseTriggerComp
     {
         base.OnTriggerEnter(other);
 <<<<<<< HEAD
+<<<<<<< HEAD
         TargetObject = other.gameObject;
 =======
 >>>>>>> parent of ab08694 (.)
+=======
+        
+>>>>>>> parent of 193311c (.)
     }
 
     protected override void OnTriggerExit(Collider other)
