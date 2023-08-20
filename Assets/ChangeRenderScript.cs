@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChangeRenderScript : MonoBehaviour
 {
-    Renderer renderer;
+    [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
     
     void Awake()
     {
-        renderer = GetComponent<Renderer>();        
+        skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();        
     }
 
     public void ChangeRender()
@@ -18,9 +18,9 @@ public class ChangeRenderScript : MonoBehaviour
 
     IEnumerator ChangeRenderCoroutine()
     {
-        renderer.material.SetFloat("_Lerp", 1);
+        skinnedMeshRenderer.material.SetFloat("_Lerp", 1);
         yield return new WaitForSeconds(0.5f);
-        renderer.material.SetFloat("_Lerp", 0);
+        skinnedMeshRenderer.material.SetFloat("_Lerp", 0);
     }
 
 }
