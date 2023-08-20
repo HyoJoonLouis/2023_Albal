@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 0}
+  time: 0
 --- !u!1 &4698440273164134988
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +571,10 @@ MonoBehaviour:
     Sounds: []
   OnAttackSounds:
     Sounds: []
+  OnHitSounds:
+    Sounds: []
+  OnDieSounds:
+    Sounds: []
   RobotEyeShineParticle: {fileID: 3848873445903178133, guid: 2a2bba16542c2bd409a10abca1a33774,
     type: 3}
   RobotEyeShineParticlePosition: {fileID: 9077839851921297016}
@@ -617,7 +622,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5034715048114474748}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 13bebc2e4cbec0745a2e60afc6c80934, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 672c3a2938b138345966adb9d14e3802, type: 3}
   m_Controller: {fileID: 9100000, guid: 5d612774b2e3d7d44b7209ddab1885a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

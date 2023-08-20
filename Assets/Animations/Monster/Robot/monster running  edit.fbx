@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2023
 		Month: 8
-		Day: 15
-		Hour: 21
-		Minute: 29
-		Second: 6
-		Millisecond: 112
+		Day: 20
+		Hour: 23
+		Minute: 52
+		Second: 17
+		Millisecond: 385
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3.1"
 }
@@ -13042,24 +13042,24 @@ Objects:  {
 			Comment: ""
 		}
 		Properties60:  {
-			Property: "DocumentUrl", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\running animation.fbx"
+			Property: "DocumentUrl", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\fbx\running animation edit.fbx"
              
-			Property: "SrcDocumentUrl", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\running animation.fbx"
+			Property: "SrcDocumentUrl", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\fbx\running animation edit.fbx"
              
 			Property: "Original", "Compound", ""
 			Property: "Original|ApplicationVendor", "KString", "", "Autodesk"
 			Property: "Original|ApplicationName", "KString", "", "3ds Max"
 			Property: "Original|ApplicationVersion", "KString", "", "2023"
-			Property: "Original|DateTime_GMT", "DateTime", "", "15/08/2023 12:29:06.111"
-			Property: "Original|FileName", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\running animation.fbx"
+			Property: "Original|DateTime_GMT", "DateTime", "", "20/08/2023 14:52:17.383"
+			Property: "Original|FileName", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\fbx\running animation edit.fbx"
              
 			Property: "LastSaved", "Compound", ""
 			Property: "LastSaved|ApplicationVendor", "KString", "", "Autodesk"
 			Property: "LastSaved|ApplicationName", "KString", "", "3ds Max"
 			Property: "LastSaved|ApplicationVersion", "KString", "", "2023"
-			Property: "LastSaved|DateTime_GMT", "DateTime", "", "15/08/2023 12:29:06.111"
+			Property: "LastSaved|DateTime_GMT", "DateTime", "", "20/08/2023 14:52:17.383"
 			Property: "Original|ApplicationActiveProject", "KString", "", "C:\Users\hsy29\Documents\3ds Max 2023"
-			Property: "Original|ApplicationNativeFile", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\robotmonster 0815 running.max"
+			Property: "Original|ApplicationNativeFile", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\animation\robotmonster 0815 running.max"
              
 		}
 	}
@@ -13454,7 +13454,7 @@ Objects:  {
 		Properties60:  {
 			Property: "Path", "KString", "", "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\roboteditzzin_02 - Default_AlbedoTransparency.png"
              
-			Property: "RelPath", "KString", "", "roboteditzzin_02 - Default_AlbedoTransparency.png"
+			Property: "RelPath", "KString", "", "..\roboteditzzin_02 - Default_AlbedoTransparency.png"
 			Property: "Color", "ColorRGB", "",0.8,0.8,0.8
 			Property: "ClipIn", "KTime", "",0
 			Property: "ClipOut", "KTime", "",0
@@ -13477,7 +13477,7 @@ Objects:  {
 		UseMipMap: 0
 		Filename: "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\roboteditzzin_02 - Default_AlbedoTransparency.png"
         
-		RelativeFilename: "roboteditzzin_02 - Default_AlbedoTransparency.png"
+		RelativeFilename: "..\roboteditzzin_02 - Default_AlbedoTransparency.png"
 	}
 	Texture: "Texture::Map #14", "" {
 		Type: "TextureVideoClip"
@@ -13504,7 +13504,7 @@ Objects:  {
 		Media: "Video::Map #14"
 		FileName: "C:\Users\hsy29\Desktop\팀프로젝트 도원결의 관련 자료\roboteditzzin_02 - Default_AlbedoTransparency.png"
         
-		RelativeFilename: "roboteditzzin_02 - Default_AlbedoTransparency.png"
+		RelativeFilename: "..\roboteditzzin_02 - Default_AlbedoTransparency.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -13577,10 +13577,10 @@ Connections:  {
 	Connect: "OP", "Texture::Map #14", "Material::Material #27", "3dsMax|main|base_color_map"
 	Connect: "OO", "Video::Map #14", "Texture::Map #14"
 	Connect: "OO", "Deformer::Skin mesh", "Model::mesh"
-	Connect: "OO", "Model::Object002", "DisplayLayer::Layer002"
-	Connect: "OO", "Model::Object", "DisplayLayer::Layer002"
 	Connect: "OO", "Model::wheel", "DisplayLayer::Layer002"
 	Connect: "OO", "Model::core", "DisplayLayer::Layer002"
+	Connect: "OO", "Model::Object", "DisplayLayer::Layer002"
+	Connect: "OO", "Model::Object002", "DisplayLayer::Layer002"
 	Connect: "OO", "Model::head", "DisplayLayer::Layer002"
 	Connect: "OO", "Model::L_hand", "DisplayLayer::Layer002"
 	Connect: "OO", "Model::L_arm", "DisplayLayer::Layer002"
