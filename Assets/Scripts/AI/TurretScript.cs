@@ -7,12 +7,16 @@ public class TurretScript : MonoBehaviour, IDamagable
     [Header("Initialize")]
     [SerializeField] float MaxHp;
     [SerializeField] float currentHp;
+    [SerializeField] GameObject RobotDestroyParticle;
+    [SerializeField] Transform RobotDestroyParticlePosition;
+
 
     [Header("Bullet")]
     [SerializeField] Transform BulletSpawnLocation;
     [SerializeField] GameObject AttackBullet;
     [SerializeField] float AttackCoolTime;
     [SerializeField] float speed;
+    
 
 
     TargetDetectScript targetDetectScript;
@@ -25,7 +29,8 @@ public class TurretScript : MonoBehaviour, IDamagable
         currentHp -= value;
         if(currentHp <= 0)
         {
-
+            GameObject.Destroy(this.gameObject);
+            ObjectPoolManager.SpawnObject(RobotDestroyParticle, RobotDestroyParticlePosition.position, RobotDestroyParticlePosition.rotation);
         }
     }
 

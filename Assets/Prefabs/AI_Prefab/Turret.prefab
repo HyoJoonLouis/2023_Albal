@@ -126,6 +126,7 @@ Transform:
   - {fileID: 7954948007868548563}
   - {fileID: 378880411817029739}
   - {fileID: 378880413285627599}
+  - {fileID: 9183634469941446330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,6 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 100
   currentHp: 0
+  RobotDestroyParticle: {fileID: 6965879628535932448, guid: 8403275c584b3964dbe2fe986e1b411c,
+    type: 3}
+  RobotDestroyParticlePosition: {fileID: 9183634469941446330}
   BulletSpawnLocation: {fileID: 378880413285627599}
   AttackBullet: {fileID: 7924651787570128293, guid: b9b3ddc189f8d54468aab00d4e7cf688,
     type: 3}
@@ -374,6 +378,37 @@ Transform:
   - {fileID: 6767095388571926069}
   m_Father: {fileID: 200608950902289264}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6873202784337368865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9183634469941446330}
+  m_Layer: 0
+  m_Name: RobotDestroyParticlePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9183634469941446330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873202784337368865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.012, y: 0.716, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 200608950902289264}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7254324796026324743
 GameObject:

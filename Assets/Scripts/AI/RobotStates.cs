@@ -8,12 +8,15 @@ public enum RobotState
 {
     watching,
     run,
-    attack
+    attack,
+    die
 }
 
 public class RobotStates
 {
     public RobotState state;
+
+    public bool IsDetected;
 
     public void ChangeState(RobotState newState, Animator animator, NavMeshAgent agent, Vector3 target)
     {
@@ -28,12 +31,16 @@ public class RobotStates
     private void OnStart(RobotState newState, Animator animator, NavMeshAgent agent, Vector3 target)
     {
         if (state == RobotState.watching)
+        {
             animator.Play("Watching");
-
+            agent.enabled = false;
+            IsDetected = false;
+        }
         else if (state == RobotState.run)
         {
             animator.SetBool("AttackToRun", true);
             agent.enabled = true;
+            IsDetected = true;
         }
 
         else if (state == RobotState.attack)
@@ -41,6 +48,11 @@ public class RobotStates
             animator.SetBool("AttackToRun", false);
             agent.enabled = false;
             animator.Play("Attack");
+        }
+
+        else if (state == RobotState.die)
+        {
+            GameObject.Destroy(animator.gameObject);
         }
     }
 
