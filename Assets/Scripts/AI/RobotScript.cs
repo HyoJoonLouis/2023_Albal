@@ -23,6 +23,7 @@ public class RobotScript : MonoBehaviour, IDamagable
     [SerializeField] Transform RobotDestroyParticlePosition;
     [SerializeField] float Distance;
     [SerializeField] Collider RightHandCollider;
+    [SerializeField] ChangeRenderScript changeRenderScript;
 
     RobotStates state;
     NavMeshAgent agent;
@@ -50,14 +51,17 @@ public class RobotScript : MonoBehaviour, IDamagable
         }
         else if(targetDetectScript.Target != null && onSightDetectScript.DetectTarget(targetDetectScript.Target.transform.position))
         {
+            SetTriggerOff();
             state.ChangeState(RobotState.run, animator, agent, targetDetectScript.Target.transform.position);
         }
         else if(targetDetectScript.Target != null && state.IsDetected)
         {
+            SetTriggerOff();
             state.ChangeState(RobotState.run, animator, agent, targetDetectScript.Target.transform.position);
         }
         else
         {
+            SetTriggerOff();
             state.ChangeState(RobotState.watching, animator, agent, Vector3.zero);
         }
 
@@ -89,6 +93,7 @@ public class RobotScript : MonoBehaviour, IDamagable
     public void TakeDamage(float value)
     {
         currentHp -= value;
+        changeRenderScript.ChangeRender();
         if(currentHp <= 0)
         {
             state.ChangeState(RobotState.die, animator, agent, Vector3.zero);

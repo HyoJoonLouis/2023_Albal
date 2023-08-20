@@ -378,6 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3297808344200088859}
   - component: {fileID: 8837138914853262678}
+  - component: {fileID: 768413263288335862}
   m_Layer: 0
   m_Name: mesh
   m_TagString: Untagged
@@ -420,7 +421,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea8b324a09e2a4f4bbc98d1f63715c5d, type: 2}
+  - {fileID: 2100000, guid: ae87a6bf9929a264394ead3933d205de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -465,6 +466,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.062885046, y: -0.34749165, z: 0.2362715}
     m_Extent: {x: 0.9433756, y: 1.0206, z: 0.731644}
   m_DirtyAABB: 0
+--- !u!114 &768413263288335862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879542066302732678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5c6d9a4f58a5346ba25a82c80ecb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4698440273164134988
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +577,7 @@ MonoBehaviour:
   RobotDestroyParticlePosition: {fileID: 3066030218194792639}
   Distance: 2
   RightHandCollider: {fileID: 5269087837974004450}
+  changeRenderScript: {fileID: 768413263288335862}
 --- !u!65 &5269087838246622504
 BoxCollider:
   m_ObjectHideFlags: 0
