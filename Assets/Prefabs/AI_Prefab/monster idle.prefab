@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5269087837128914673}
   - component: {fileID: 5269087837128914672}
   - component: {fileID: 5269087837128914679}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975765414735144077}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 7146666993373778157}
   - component: {fileID: 6878972706636580583}
   - component: {fileID: 7883048568856609756}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Object002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3494675160241201470}
   - component: {fileID: 5269087837974004450}
   - component: {fileID: 5269087837974004449}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: R_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1424385579312936650}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: L_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6993100597685542025}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Point001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3066030218194792639}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: RoboyDestroyParticlePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3297808344200088859}
   - component: {fileID: 8837138914853262678}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9077839851921297016}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: RobotEyeShinePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 5269087837940398360}
   - component: {fileID: 5269087837940398361}
   - component: {fileID: 5269087837940398362}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: TargetDetect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3229320318026320670}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: L_up arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8001722937175820295}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: R_down arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4081795976968518102}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1176305896211235715}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: R_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147242033045963771}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: L_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3774734537481383875}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: L_down arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7502321188979277591}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: R_up arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 6662763165512651042}
   - component: {fileID: 7087587996250479731}
   - component: {fileID: 6371527125926706412}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3607331083330004476}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

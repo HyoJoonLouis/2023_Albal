@@ -8,6 +8,7 @@ public class SplashDamageScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.transform.name);
         IDamagable damagable = other.GetComponent<IDamagable>();
         if(damagable != null)
         {

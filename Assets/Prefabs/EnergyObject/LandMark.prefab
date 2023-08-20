@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6022238827510810497}
   - component: {fileID: 2948408636206851052}
   - component: {fileID: 2908138989851058404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LandMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHp: 10
+  currentHp: 0
   Door: {fileID: 0}
 --- !u!136 &2908138989851058404
 CapsuleCollider:
