@@ -48,6 +48,9 @@ public class HandInteractions : MonoBehaviour
     [SerializeField] RandomSounds<AudioClip> ReloadSound;
     AudioSource audioSource;
 
+    [Header("Initialize")]
+    [SerializeField] GoggleScript goggleScript;
+
     int isTransparent;
 
     void Start()
@@ -74,10 +77,16 @@ public class HandInteractions : MonoBehaviour
         if (ChangePaintValue >= 0.8f && isAButtonPressed == false)
         {
             isAButtonPressed = true;
-            if(isTransparent == 0)
+            if (isTransparent == 0)
+            {
                 isTransparent = 1;
+                goggleScript.GoggleOn();
+            }
             else
+            {
                 isTransparent = 0;
+                goggleScript.GoggleOff();
+            }
             GameManager.PaintTransparent(isTransparent);
         }
         if(isAButtonPressed == true && ChangePaintValue < 0.1f)
