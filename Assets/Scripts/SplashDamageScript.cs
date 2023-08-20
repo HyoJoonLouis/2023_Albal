@@ -6,6 +6,11 @@ public class SplashDamageScript : MonoBehaviour
 {
     public float Damage;
 
+    private void OnEnable()
+    {
+        Invoke("ReturnObjectToPool", 0.4f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.transform.name);
@@ -14,5 +19,10 @@ public class SplashDamageScript : MonoBehaviour
         {
             damagable.TakeDamage(Damage);
         }
+    }
+
+    private void ReturnObjectToPool()
+    {
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
     }
 }
