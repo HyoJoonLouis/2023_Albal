@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChangeRenderScript : MonoBehaviour
 {
     [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
+    [SerializeField] float time;
     
     void Awake()
     {
@@ -19,7 +20,7 @@ public class ChangeRenderScript : MonoBehaviour
     IEnumerator ChangeRenderCoroutine()
     {
         skinnedMeshRenderer.material.SetFloat("_Lerp", 1);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time);
         skinnedMeshRenderer.material.SetFloat("_Lerp", 0);
     }
 
