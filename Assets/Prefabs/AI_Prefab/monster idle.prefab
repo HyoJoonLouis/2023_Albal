@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterVisualRadius: 30
-  MonsterVisualAngle: 60
+  MonsterVisualAngle: 180
 --- !u!1 &461608005302930981
 GameObject:
   m_ObjectHideFlags: 0

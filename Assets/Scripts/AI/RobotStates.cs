@@ -12,7 +12,7 @@ public enum RobotState
 
 public class RobotStates
 {
-    RobotState state;
+    public RobotState state;
 
     public void ChangeState(RobotState newState, Animator animator, NavMeshAgent agent, Vector3 target)
     {
@@ -52,7 +52,7 @@ public class RobotStates
 
     public void UpdateState(NavMeshAgent agent, Vector3 target)
     {
-        if(state == RobotState.attack)
+        if(state == RobotState.run)
         {
             agent.SetDestination(target);
         }
