@@ -18,6 +18,7 @@ public class LandMarkDoorSript : MonoBehaviour
         animator.Play("Open");
     }
 
+
     public void Open()
     {
         animator.Play("Open");
