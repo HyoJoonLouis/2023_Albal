@@ -34,7 +34,7 @@ public class SubtitleTrigger : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        Subtitle.enabled = true;
+        Subtitle.color = new Color(255, 255, 255, 255);
         Subtitle.sprite = images[index];
         audioSource.PlayOneShot(audioClips[index]);
     }
@@ -50,7 +50,7 @@ public class SubtitleTrigger : MonoBehaviour
             if(++index > images.Length)
             {
                 Time.timeScale = 1;
-                Subtitle.enabled = false;
+                Subtitle.color = new Color(0, 0, 0, 0);
                 this.gameObject.SetActive(false);
                 return;
             }
