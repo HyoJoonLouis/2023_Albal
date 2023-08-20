@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LandMarkScript : MonoBehaviour, IDamagable
 {
-    [SerializeField ]float MaxHp;
-    float currentHp;
+    [SerializeField] float MaxHp;
+    [SerializeField] float currentHp;
 
     [SerializeField] LandMarkDoorSript Door;
     public void TakeDamage(float value)
