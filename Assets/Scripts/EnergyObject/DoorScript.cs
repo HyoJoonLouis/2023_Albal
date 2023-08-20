@@ -16,4 +16,8 @@ public class DoorScript : EnergyObject
     {
         animator.Play("Open");
     }
+    public override void Deactivate()
+    {
+        animator.Play("Close");
+    }
 }
