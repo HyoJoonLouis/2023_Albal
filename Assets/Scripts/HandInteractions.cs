@@ -96,7 +96,6 @@ public class HandInteractions : MonoBehaviour
         if (ChargeValue > 0.8f && ChargeTime == 0)
         {
             PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, -9999, -9999), this.transform.rotation).GetComponent<PaintBall>();
-            PaintBallInstance = Instantiate(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(0,0,-9999), this.transform.rotation).GetComponent<PaintBall>();
         }
         if (ChargeValue > 0.8f)
         {

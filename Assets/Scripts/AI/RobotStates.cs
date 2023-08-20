@@ -34,7 +34,6 @@ public class RobotStates
         {
             animator.SetBool("AttackToRun", true);
             agent.enabled = true;
-            agent.SetDestination(target);
         }
 
         else if (state == RobotState.attack)
