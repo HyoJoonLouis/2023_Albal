@@ -9,6 +9,7 @@ public class TurretScript : MonoBehaviour, IDamagable
     [SerializeField] float currentHp;
     [SerializeField] GameObject RobotDestroyParticle;
     [SerializeField] Transform RobotDestroyParticlePosition;
+    [SerializeField] ChangeRenderScript changeRenderScript;
 
 
     [Header("Bullet")]
@@ -32,6 +33,7 @@ public class TurretScript : MonoBehaviour, IDamagable
     {
         currentHp -= value;
         audioSource.PlayOneShot(OnHitSounds.GetRandom());
+        changeRenderScript.ChangeRender();
         if(currentHp <= 0)
         {
             GameObject.Destroy(this.gameObject);
