@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 public enum RobotState
 {
@@ -19,42 +20,41 @@ public class RobotStates
         if (state == newState)
             return;
 
+        OnEnd();
         state = newState;
+        OnStart(newState, animator, agent, target);
+    }
 
+    private void OnStart(RobotState newState, Animator animator, NavMeshAgent agent, Vector3 target)
+    {
         if (state == RobotState.watching)
-            Watching(animator);
+            animator.Play("Watching");
 
         else if (state == RobotState.run)
-            Run(animator, agent, target);
+        {
+            animator.SetBool("AttackToRun", true);
+            agent.enabled = true;
+            agent.SetDestination(target);
+        }
 
         else if (state == RobotState.attack)
-            Attack(animator, agent);
+        {
+            animator.SetBool("AttackToRun", false);
+            agent.enabled = false;
+            animator.Play("Attack");
+        }
     }
 
-    private void Watching(Animator animator)
+    public void OnUpdate(NavMeshAgent agent, Vector3 target)
     {
-        animator.Play("Watching");
-    }
-
-    private void Run(Animator animator, NavMeshAgent agent, Vector3 target)
-    {
-        animator.SetBool("AttackToRun", true);
-        agent.enabled = true;
-        agent.SetDestination(target);
-    }
-
-    private void Attack(Animator animator, NavMeshAgent agent)
-    {
-        animator.SetBool("AttackToRun", false);
-        agent.enabled = false;
-        animator.Play("Attack");
-    }
-
-    public void UpdateState(NavMeshAgent agent, Vector3 target)
-    {
-        if(state == RobotState.run)
+        if (state == RobotState.run)
         {
             agent.SetDestination(target);
         }
+    }
+
+    private void OnEnd()
+    {
+
     }
 }
