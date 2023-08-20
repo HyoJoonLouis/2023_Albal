@@ -18,6 +18,7 @@ public class SubtitleTrigger : MonoBehaviour
 
     int index;
     bool isPressed;
+    bool isTriggered;
     AudioSource audioSource;
 
     private Image Subtitle;
@@ -26,6 +27,7 @@ public class SubtitleTrigger : MonoBehaviour
         Subtitle = GameObject.Find("Subtitle").GetComponent<Image>();
         audioSource = GetComponent<AudioSource>();
         index = 0;
+        isTriggered = false;
         isPressed = false;
     }
     public void OnTriggerEnter(Collider other)
@@ -34,20 +36,23 @@ public class SubtitleTrigger : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+        isTriggered = true;
         Subtitle.color = new Color(255, 255, 255, 255);
         Subtitle.sprite = images[index];
-        audioSource.PlayOneShot(audioClips[index]);
+        audioSource.clip = audioClips[index];
+        audioSource.Play();
     }
 
     public void Update()
     {
+        if(!isTriggered)
+            return;
+
         float PressedValue = PressedActionProperty.action.ReadValue<float>();
         if (PressedValue >= 0.8 && isPressed == false)
-            isPressed = true;
-
-        if(isPressed)
         {
-            if(++index > images.Length)
+            isPressed = true;
+            if (++index >= images.Length)
             {
                 Time.timeScale = 1;
                 Subtitle.color = new Color(0, 0, 0, 0);
@@ -55,9 +60,13 @@ public class SubtitleTrigger : MonoBehaviour
                 return;
             }
             Subtitle.sprite = images[index];
-            audioSource.PlayOneShot(audioClips[index]);
-            isPressed = false;
+            audioSource.clip = audioClips[index];
+            audioSource.Play();
+
         }
+        if (PressedValue <= 0.2f && isPressed == true)
+            isPressed = false;
+
     }
 
 }

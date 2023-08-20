@@ -14,6 +14,7 @@ public class LandMarkScript : MonoBehaviour, IDamagable
         if( currentHp < 0 )
         {
             Door.Open();
+            this.enabled = false;
         }
     }
 
