@@ -104,6 +104,7 @@ public class HandInteractions : MonoBehaviour
         }
         if (ChargeValue < 0.2f && ChargeTime != 0)
         {
+            StartCoroutine(SetCoolTime());
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             audioSource.PlayOneShot(ShootSound.GetRandom());
             currentBulletCount--;
@@ -111,7 +112,6 @@ public class HandInteractions : MonoBehaviour
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", ChargeTime);
             ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation).transform.SetParent(this.gameObject.transform);
-            StartCoroutine(SetCoolTime());
             PaintBallInstance = null;
         }
     }

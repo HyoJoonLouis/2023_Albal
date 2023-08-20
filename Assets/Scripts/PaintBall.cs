@@ -11,6 +11,7 @@ public class PaintBall : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] float Damage;
+    [SerializeField] GameObject SplashDamageObject;
 
     [Header("Shader")]
     [SerializeField] Texture2D[] PaintBrush;
@@ -72,6 +73,7 @@ public class PaintBall : MonoBehaviour
         }
 
         ObjectPoolManager.ReturnObjectToPool(this.gameObject);
+        ObjectPoolManager.SpawnObject(SplashDamageObject, this.transform.position, this.transform.rotation);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         ObjectPoolManager.SpawnObject(BulletSoundInstance, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(ExplodeSound.GetRandom());
 
@@ -80,11 +82,6 @@ public class PaintBall : MonoBehaviour
         if (paintable != null)
         {
             paintable.Hit();
-        }
-        IDamagable damagable = collision.transform.GetComponent<IDamagable>();
-        if (damagable != null)
-        {
-            damagable.TakeDamage(Damage);
         }
 
 

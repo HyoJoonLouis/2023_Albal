@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
+  SplashDamageObject: {fileID: 4344354411674953484, guid: 67a0b1d348cf48c408e0b6f82b7db2ac,
+    type: 3}
   PaintBrush:
   - {fileID: 2800000, guid: 64e7dde0c981f3f45bde847a593caf51, type: 3}
   - {fileID: 2800000, guid: ee46962047554f04b8bb98f34a095fbd, type: 3}

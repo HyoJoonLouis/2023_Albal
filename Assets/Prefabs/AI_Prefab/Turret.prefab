@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 378880411817029739}
   - component: {fileID: 378880411817029737}
   - component: {fileID: 378880411817029736}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: TargetDetect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 378880413285627599}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 378880411331175258}
   - component: {fileID: 378880411331175256}
   - component: {fileID: 378880411331175259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5290094443992802155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5769612629477640806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 378880411763263108}
   - component: {fileID: 378880411763263111}
   - component: {fileID: 378880411763263109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7954948007868548563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9183634469941446330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RobotDestroyParticlePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6767095388571926069}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6909651230484085959}
   - component: {fileID: 7232830474841114003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
