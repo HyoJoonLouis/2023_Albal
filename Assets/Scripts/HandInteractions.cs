@@ -48,9 +48,12 @@ public class HandInteractions : MonoBehaviour
     [SerializeField] RandomSounds<AudioClip> ReloadSound;
     AudioSource audioSource;
 
-    [Header("Initialize")]
+    [Header("Goggle")]
     [SerializeField] GoggleScript goggleScript;
     [SerializeField] float GoggleCoolTime;
+    [SerializeField] RandomSounds<AudioClip> GoggleOnSounds;
+    [SerializeField] RandomSounds<AudioClip> GoggleOffSounds;
+
 
     int isTransparent;
 
@@ -83,11 +86,13 @@ public class HandInteractions : MonoBehaviour
             {
                 isTransparent = 1;
                 goggleScript.GoggleOn();
+                audioSource.PlayOneShot(GoggleOnSounds.GetRandom());
             }
             else
             {
                 isTransparent = 0;
                 goggleScript.GoggleOff();
+                audioSource.PlayOneShot(GoggleOffSounds.GetRandom());
             }
             Invoke("MakeTransparent", 0.2f);
         }
