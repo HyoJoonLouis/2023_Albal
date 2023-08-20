@@ -11,10 +11,11 @@ public class RobotScript : MonoBehaviour, IDamagable
     [SerializeField] float MaxHp;
     [SerializeField] float currentHp;
 
-
+    [Header("Sounds")]
     [SerializeField] RandomSounds<AudioClip> ReadyAttackSounds;
     [SerializeField] RandomSounds<AudioClip> OnAttackSounds;
-
+    [SerializeField] RandomSounds<AudioClip> OnHitSounds;
+    [SerializeField] RandomSounds<AudioClip> OnDieSounds;
 
     [Header("Initialize")]
     [SerializeField] GameObject RobotEyeShineParticle;
@@ -94,10 +95,12 @@ public class RobotScript : MonoBehaviour, IDamagable
     {
         currentHp -= value;
         changeRenderScript.ChangeRender();
+        audioSource.PlayOneShot(OnHitSounds.GetRandom());
         if(currentHp <= 0)
         {
             state.ChangeState(RobotState.die, animator, agent, Vector3.zero);
             ObjectPoolManager.SpawnObject(RobotDestroyParticle, RobotDestroyParticlePosition.position, RobotDestroyParticlePosition.rotation);
+            audioSource.PlayOneShot(OnDieSounds.GetRandom());
         }
     }
 }
