@@ -50,6 +50,7 @@ public class HandInteractions : MonoBehaviour
 
     [Header("Initialize")]
     [SerializeField] GoggleScript goggleScript;
+    [SerializeField] float GoggleCoolTime;
 
     int isTransparent;
 
@@ -77,6 +78,7 @@ public class HandInteractions : MonoBehaviour
         if (ChangePaintValue >= 0.8f && isAButtonPressed == false)
         {
             isAButtonPressed = true;
+            Invoke("SetAKeyCoolTime", GoggleCoolTime);
             if (isTransparent == 0)
             {
                 isTransparent = 1;
@@ -87,11 +89,7 @@ public class HandInteractions : MonoBehaviour
                 isTransparent = 0;
                 goggleScript.GoggleOff();
             }
-            GameManager.PaintTransparent(isTransparent);
-        }
-        if(isAButtonPressed == true && ChangePaintValue < 0.1f)
-        {
-            isAButtonPressed = false;
+            Invoke("MakeTransparent", 0.2f);
         }
 
         if (isCoolTime || currentBulletCount == 0)
@@ -154,4 +152,13 @@ public class HandInteractions : MonoBehaviour
         isCoolTime = false;
     }
 
+    private void SetAKeyCoolTime()
+    {
+        isAButtonPressed = false;
+    }
+    
+    private void MakeTransparent()
+    {
+        GameManager.PaintTransparent(isTransparent);
+    }
 }
