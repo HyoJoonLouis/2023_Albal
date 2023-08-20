@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3771928191706446616}
   - component: {fileID: 3305290576471654711}
   - component: {fileID: 6917770190936990455}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: YellowPaintBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
