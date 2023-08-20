@@ -9,9 +9,8 @@ public class Paintable : MonoBehaviour
     [SerializeField] Shader materialShader;
     [SerializeField] Texture2D BaseTexture;
     [SerializeField] ComputeShader computeShader;
-
-    [SerializeField] ChangeRenderScript changeRenderScript;
-
+    
+    
     [HideInInspector] public Material PaintableMaterial;
     public RenderTexture PaintTexture;
 

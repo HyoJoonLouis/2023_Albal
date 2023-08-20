@@ -13,41 +13,50 @@ public class SubtitleTrigger : MonoBehaviour
     [SerializeField] InputActionProperty PressedActionProperty;
 
     [SerializeField] bool CanPause;
-    [SerializeField] string Text;
+    [SerializeField] Sprite[] images;
+    [SerializeField] AudioClip[] audioClips;
 
-    private TextMeshProUGUI Subtitle;
+    int index;
+    bool isPressed;
+    AudioSource audioSource;
+
+    private Image Subtitle;
     public void Start()
     {
-        Subtitle = GameObject.Find("Subtitle").GetComponent<TextMeshProUGUI>();
+        Subtitle = GameObject.Find("Subtitle").GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
+        index = 0;
+        isPressed = false;
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
-
         if(CanPause)
         {
             Time.timeScale = 0;
         }
-        Subtitle.text = Text;
+        Subtitle.enabled = true;
+        Subtitle.sprite = images[index];
+        audioSource.PlayOneShot(audioClips[index]);
     }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
-        Subtitle.text = "";
-        this.gameObject.SetActive(false);
-    }
-
 
     public void Update()
     {
-        float isPressed = PressedActionProperty.action.ReadValue<float>();
-        if (isPressed >= 0.8 && Time.timeScale == 0)
+        float PressedValue = PressedActionProperty.action.ReadValue<float>();
+        if (PressedValue >= 0.8 && isPressed == false)
+            isPressed = true;
+
+        if(isPressed)
         {
-            Time.timeScale = 1;
+            if(++index > images.Length)
+            {
+                Time.timeScale = 1;
+                Subtitle.enabled = false;
+                this.gameObject.SetActive(false);
+                return;
+            }
+            Subtitle.sprite = images[index];
+            audioSource.PlayOneShot(audioClips[index]);
+            isPressed = false;
         }
     }
 
