@@ -565,16 +565,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cbc24b0a1056443badb0d76268c9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 30
+  MaxHp: 100
   currentHp: 0
   ReadyAttackSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: e12368e7ea58d57409edafc29d9f246a, type: 3}
   OnAttackSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: 992ed170fce94e941b5d61b340ccf2bc, type: 3}
+    - {fileID: 8300000, guid: c1c77611f82e16c4b88dcbf9d32011ef, type: 3}
+    - {fileID: 8300000, guid: 5a187c5e3ad439542a3a58d0bbea6411, type: 3}
   OnHitSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: 573ad5555491f224e8c12b133cb5880e, type: 3}
+    - {fileID: 8300000, guid: bdd56c60813548244b892bf0512000e9, type: 3}
   OnDieSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: 94fc000f248c6e44b8bd27784819a2c4, type: 3}
+    - {fileID: 8300000, guid: 3644d974d024b774f83b6de0412a9c12, type: 3}
   RobotEyeShineParticle: {fileID: 3848873445903178133, guid: 2a2bba16542c2bd409a10abca1a33774,
     type: 3}
   RobotEyeShineParticlePosition: {fileID: 9077839851921297016}
