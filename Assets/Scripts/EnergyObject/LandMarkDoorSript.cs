@@ -15,6 +15,7 @@ public class LandMarkDoorSript : MonoBehaviour
 
     AudioSource audioSource;
     Animator animator;
+    bool isDead = false;
 
     public void Awake()
     {
@@ -24,9 +25,10 @@ public class LandMarkDoorSript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.transform.CompareTag("Player"))
+        if (!other.transform.CompareTag("Player") || isDead == true)
             return;
         Open();
+
     }
 
 
@@ -34,6 +36,7 @@ public class LandMarkDoorSript : MonoBehaviour
     {
         animator.Play("Open");
         audioSource.PlayOneShot(OpenSounds.GetRandom());
+        isDead = true;
         ObjectPoolManager.SpawnObject(OpenParticle, OpenParticlePosition.position, OpenParticlePosition.rotation);
         ObjectPoolManager.SpawnObject(WhileOpenParticle, WhileOpenParticlePosition.position, WhileOpenParticlePosition.rotation);
 
