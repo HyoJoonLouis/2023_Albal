@@ -102,7 +102,8 @@ GameObject:
   - component: {fileID: 378880411331175258}
   - component: {fileID: 378880411331175256}
   - component: {fileID: 378880411331175259}
-  m_Layer: 0
+  - component: {fileID: 1176359909}
+  m_Layer: 9
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 685501982034307530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6909651230484085959}
@@ -126,6 +127,7 @@ Transform:
   - {fileID: 7954948007868548563}
   - {fileID: 378880411817029739}
   - {fileID: 378880413285627599}
+  - {fileID: 9183634469941446330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -174,13 +176,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21242bd3d773ee54eb72db3575a13461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
+  MaxHp: 60
   currentHp: 0
+  RobotDestroyParticle: {fileID: 6965879628535932448, guid: 8403275c584b3964dbe2fe986e1b411c,
+    type: 3}
+  RobotDestroyParticlePosition: {fileID: 9183634469941446330}
+  changeRenderScript: {fileID: 4485586999967838862}
   BulletSpawnLocation: {fileID: 378880413285627599}
   AttackBullet: {fileID: 7924651787570128293, guid: b9b3ddc189f8d54468aab00d4e7cf688,
     type: 3}
-  AttackCoolTime: 1
-  speed: 2
+  AttackCoolTime: 7
+  speed: 20
+  OnAttackSounds:
+    Sounds:
+    - {fileID: 8300000, guid: bfdb736a7db3613468eaf88bae31b3b2, type: 3}
+    - {fileID: 8300000, guid: 93307ff34ee9d4641ba8bff3dfefbae9, type: 3}
+  OnHitSounds:
+    Sounds:
+    - {fileID: 8300000, guid: 573ad5555491f224e8c12b133cb5880e, type: 3}
+    - {fileID: 8300000, guid: bdd56c60813548244b892bf0512000e9, type: 3}
+  OnDieSounds:
+    Sounds:
+    - {fileID: 8300000, guid: 94fc000f248c6e44b8bd27784819a2c4, type: 3}
+    - {fileID: 8300000, guid: 3644d974d024b774f83b6de0412a9c12, type: 3}
+--- !u!54 &1176359909
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685501982034307530}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &3933322898559909658
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +409,37 @@ Transform:
   m_Father: {fileID: 200608950902289264}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6873202784337368865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9183634469941446330}
+  m_Layer: 0
+  m_Name: RobotDestroyParticlePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9183634469941446330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873202784337368865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.012, y: 0.716, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 200608950902289264}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7254324796026324743
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6909651230484085959}
   - component: {fileID: 7232830474841114003}
+  - component: {fileID: 4485586999967838862}
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -458,7 +524,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 239378781582670930, guid: 11e79835a7be907409145ed0a9237ca2, type: 3}
+  - {fileID: 2100000, guid: 39ec334dbfcecd847ae3c6c75d42ec99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -495,3 +561,17 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0017100573, y: 0.28263786, z: -0.04479441}
     m_Extent: {x: 0.6106292, y: 0.6215192, z: 0.34384635}
   m_DirtyAABB: 0
+--- !u!114 &4485586999967838862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719995832644101906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5c6d9a4f58a5346ba25a82c80ecb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinnedMeshRenderer: {fileID: 0}
+  time: 0.15

@@ -11,12 +11,21 @@ public class ElevatorScript : EnergyObject
     [SerializeField] Transform StartPosition;
     [SerializeField] Transform EndPosition;
 
+    [Header("Sounds")]
+    [SerializeField] RandomSounds<AudioClip> ActivateSounds;
+    AudioSource audioSource;
+
     IEnumerator coroutine;
 
     float deltaTime = 0;
 
     public GameObject PlayerCharacter;
 
+    public void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = ActivateSounds.GetRandom();
+    }
 
     private void Update()
     {
@@ -28,6 +37,7 @@ public class ElevatorScript : EnergyObject
         if(coroutine != null)
             StopCoroutine(coroutine);
         coroutine = Move(EndPosition.position);
+        audioSource.Play();
         StartCoroutine(coroutine);
     }
 
@@ -36,6 +46,7 @@ public class ElevatorScript : EnergyObject
         if(coroutine != null)
             StopCoroutine(coroutine);
         coroutine = Move(StartPosition.position);
+        audioSource.Stop();
         StartCoroutine(coroutine);
     }
 
