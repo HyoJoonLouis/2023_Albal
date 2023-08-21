@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class LandMarkScript : MonoBehaviour, IDamagable
 {
-    [SerializeField] float MaxHp;
-    [SerializeField] float currentHp;
+    [SerializeField ]float MaxHp;
+    float currentHp;
 
     [SerializeField] LandMarkDoorSript Door;
-    bool isDead = false;
     public void TakeDamage(float value)
     {
-        if (isDead)
-            return;
         currentHp -= value;
         if( currentHp < 0 )
         {
             Door.Open();
-            isDead = true;
         }
     }
 

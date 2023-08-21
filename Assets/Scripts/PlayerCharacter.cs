@@ -21,7 +21,7 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
         if (currentHp < 0)
         {
             GameOverUI.Play("Open");
-            Invoke("SpawnCharacter", 3.0f);
+            Invoke("SpawnCharacter", 5.0f);
 
         }
     }
@@ -39,7 +39,7 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
     public void SpawnCharacter()
     {
         this.transform.position = CurrentCheckPoint.position;
-        currentHp = MaxHp;
         GameOverUI.Play("Idle");
+
     }
 }

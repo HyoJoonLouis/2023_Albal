@@ -4,21 +4,10 @@ using UnityEngine;
 
 public class LandMarkDoorSript : MonoBehaviour
 {
-    [SerializeField] RandomSounds<AudioClip> OpenSounds;
-    [SerializeField] RandomSounds<AudioClip> CloseSounds;
-
-    [SerializeField] GameObject OpenParticle;
-    [SerializeField] GameObject WhileOpenParticle;
-
-    [SerializeField] Transform OpenParticlePosition;
-    [SerializeField] Transform WhileOpenParticlePosition;
-
-    AudioSource audioSource;
     Animator animator;
 
     public void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -26,16 +15,12 @@ public class LandMarkDoorSript : MonoBehaviour
     {
         if (!other.transform.CompareTag("Player"))
             return;
-        Open();
+        animator.Play("Open");
     }
 
 
     public void Open()
     {
         animator.Play("Open");
-        audioSource.PlayOneShot(OpenSounds.GetRandom());
-        ObjectPoolManager.SpawnObject(OpenParticle, OpenParticlePosition.position, OpenParticlePosition.rotation);
-        ObjectPoolManager.SpawnObject(WhileOpenParticle, WhileOpenParticlePosition.position, WhileOpenParticlePosition.rotation);
-
     }
 }

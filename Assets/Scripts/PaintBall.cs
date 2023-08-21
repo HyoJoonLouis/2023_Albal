@@ -11,7 +11,6 @@ public class PaintBall : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] float Damage;
-    [SerializeField] GameObject SplashDamageObject;
 
     [Header("Shader")]
     [SerializeField] Texture2D[] PaintBrush;
@@ -61,6 +60,8 @@ public class PaintBall : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
             return;
 
+        Debug.Log(collision.transform.name);
+
         if (Bounce > 0)
         {
             Bounce--;
@@ -70,16 +71,22 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
-        ObjectPoolManager.SpawnObject(SplashDamageObject, this.transform.position, this.transform.rotation);
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         ObjectPoolManager.SpawnObject(BulletSoundInstance, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(ExplodeSound.GetRandom());
-        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
-        
+
+
         IPaintable paintable = collision.transform.GetComponent<IPaintable>();
         if (paintable != null)
         {
             paintable.Hit();
         }
+        IDamagable damagable = collision.transform.GetComponent<IDamagable>();
+        if (damagable != null)
+        {
+            damagable.TakeDamage(Damage);
+        }
+
 
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal, -collision.contacts[0].normal);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Paintable")))

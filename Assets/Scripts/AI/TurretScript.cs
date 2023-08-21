@@ -7,10 +7,6 @@ public class TurretScript : MonoBehaviour, IDamagable
     [Header("Initialize")]
     [SerializeField] float MaxHp;
     [SerializeField] float currentHp;
-    [SerializeField] GameObject RobotDestroyParticle;
-    [SerializeField] Transform RobotDestroyParticlePosition;
-    [SerializeField] ChangeRenderScript changeRenderScript;
-
 
     [Header("Bullet")]
     [SerializeField] Transform BulletSpawnLocation;
@@ -18,12 +14,7 @@ public class TurretScript : MonoBehaviour, IDamagable
     [SerializeField] float AttackCoolTime;
     [SerializeField] float speed;
 
-    [Header("Sounds")]
-    [SerializeField] RandomSounds<AudioClip> OnAttackSounds;
-    [SerializeField] RandomSounds<AudioClip> OnHitSounds;
-    [SerializeField] RandomSounds<AudioClip> OnDieSounds;
 
-    AudioSource audioSource;
     TargetDetectScript targetDetectScript;
     OnSightDetectScript onSightDetectScript;
     Animator animator;
@@ -32,13 +23,9 @@ public class TurretScript : MonoBehaviour, IDamagable
     public void TakeDamage(float value)
     {
         currentHp -= value;
-        audioSource.PlayOneShot(OnHitSounds.GetRandom());
-        changeRenderScript.ChangeRender();
         if(currentHp <= 0)
         {
-            GameObject.Destroy(this.gameObject);
-            audioSource.PlayOneShot(OnDieSounds.GetRandom());
-            ObjectPoolManager.SpawnObject(RobotDestroyParticle, RobotDestroyParticlePosition.position, RobotDestroyParticlePosition.rotation);
+
         }
     }
 
@@ -48,7 +35,6 @@ public class TurretScript : MonoBehaviour, IDamagable
         onSightDetectScript = GetComponentInChildren<OnSightDetectScript>();
         animator = GetComponent<Animator>();
         currentHp = MaxHp;
-        audioSource = GetComponent<AudioSource>();
         StartCoroutine("Attack");
     }
 
@@ -56,6 +42,7 @@ public class TurretScript : MonoBehaviour, IDamagable
     {
         if (targetDetectScript.Target && onSightDetectScript.DetectTarget(targetDetectScript.Target.transform.position))
             transform.LookAt(targetDetectScript.Target.transform);
+
     }
 
     IEnumerator Attack()
@@ -64,7 +51,6 @@ public class TurretScript : MonoBehaviour, IDamagable
         {
             TurretBulletScript bullet = ObjectPoolManager.SpawnObject(AttackBullet, transform.position, transform.rotation).GetComponent<TurretBulletScript>();
             bullet.rb.velocity = (targetDetectScript.Target.transform.position - transform.position).normalized * speed;
-            audioSource.PlayOneShot(OnAttackSounds.GetRandom());
         }
         yield return new WaitForSeconds(AttackCoolTime);
         StartCoroutine("Attack");
