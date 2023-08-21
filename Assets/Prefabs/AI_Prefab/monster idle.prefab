@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterVisualRadius: 50
-  MonsterVisualAngle: 200
+  MonsterVisualAngle: 50
 --- !u!1 &461608005302930981
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cbc24b0a1056443badb0d76268c9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
+  MaxHp: 160
   currentHp: 0
   ReadyAttackSounds:
     Sounds:
@@ -785,8 +785,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5269087837940398367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.00000059605, y: -0.0000002861, z: -1.2266}
+  m_LocalScale: {x: 2.6054318, y: 2.6054318, z: 2.6054318}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5662491505325839430}
