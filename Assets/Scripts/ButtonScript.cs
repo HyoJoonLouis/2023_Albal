@@ -16,15 +16,6 @@ public class ButtonScript : MonoBehaviour, IPaintable
     [HideInInspector] public bool isHit;
     [SerializeField] EnergyObject EnergyObject;
 
-    [Header("Sounds")]
-    AudioSource audioSource;
-    [SerializeField] RandomSounds<AudioClip> ActivateSounds;
-    [SerializeField] RandomSounds<AudioClip> OnActivateSounds;
-
-    public void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     public void Hit()
     {
@@ -33,9 +24,6 @@ public class ButtonScript : MonoBehaviour, IPaintable
 
         isHit = true;
         ObjectPoolManager.SpawnObject(SparkParticle, this.transform.position, this.transform.rotation);
-        audioSource.PlayOneShot(ActivateSounds.GetRandom());
-        audioSource.clip = OnActivateSounds.GetRandom();
-        audioSource.Play();
         activateParticle = ObjectPoolManager.SpawnObject(ActivateParticle, this.transform.position, this.transform.rotation);
         this.GetComponent<Renderer>().material = ActivateMaterial;
         Invoke("Deactivate", DeactivateTime);
@@ -50,7 +38,6 @@ public class ButtonScript : MonoBehaviour, IPaintable
         isHit = false;
         this.GetComponent<Renderer>().material = DeactivateMaterial;
         ObjectPoolManager.ReturnObjectToPool(activateParticle);
-        audioSource.Stop();
         EnergyObject.Deactivate();
     }
 }
