@@ -13,42 +13,60 @@ public class SubtitleTrigger : MonoBehaviour
     [SerializeField] InputActionProperty PressedActionProperty;
 
     [SerializeField] bool CanPause;
-    [SerializeField] string Text;
+    [SerializeField] Sprite[] images;
+    [SerializeField] AudioClip[] audioClips;
 
-    private TextMeshProUGUI Subtitle;
+    int index;
+    bool isPressed;
+    bool isTriggered;
+    AudioSource audioSource;
+
+    private Image Subtitle;
     public void Start()
     {
-        Subtitle = GameObject.Find("Subtitle").GetComponent<TextMeshProUGUI>();
+        Subtitle = GameObject.Find("Subtitle").GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
+        index = 0;
+        isTriggered = false;
+        isPressed = false;
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
-            return;
-
         if(CanPause)
         {
             Time.timeScale = 0;
         }
-        Subtitle.text = Text;
+        isTriggered = true;
+        Subtitle.color = new Color(255, 255, 255, 255);
+        Subtitle.sprite = images[index];
+        audioSource.clip = audioClips[index];
+        audioSource.Play();
     }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
-        Subtitle.text = "";
-        this.gameObject.SetActive(false);
-    }
-
 
     public void Update()
     {
-        float isPressed = PressedActionProperty.action.ReadValue<float>();
-        if (isPressed >= 0.8 && Time.timeScale == 0)
+        if(!isTriggered)
+            return;
+
+        float PressedValue = PressedActionProperty.action.ReadValue<float>();
+        if (PressedValue >= 0.8 && isPressed == false)
         {
-            Time.timeScale = 1;
+            isPressed = true;
+            if (++index >= images.Length)
+            {
+                Time.timeScale = 1;
+                Subtitle.color = new Color(0, 0, 0, 0);
+                this.gameObject.SetActive(false);
+                return;
+            }
+            Subtitle.sprite = images[index];
+            audioSource.clip = audioClips[index];
+            audioSource.Play();
+
         }
+        if (PressedValue <= 0.2f && isPressed == true)
+            isPressed = false;
+
     }
 
 }

@@ -48,6 +48,13 @@ public class HandInteractions : MonoBehaviour
     [SerializeField] RandomSounds<AudioClip> ReloadSound;
     AudioSource audioSource;
 
+    [Header("Goggle")]
+    [SerializeField] GoggleScript goggleScript;
+    [SerializeField] float GoggleCoolTime;
+    [SerializeField] RandomSounds<AudioClip> GoggleOnSounds;
+    [SerializeField] RandomSounds<AudioClip> GoggleOffSounds;
+
+
     int isTransparent;
 
     void Start()
@@ -74,15 +81,20 @@ public class HandInteractions : MonoBehaviour
         if (ChangePaintValue >= 0.8f && isAButtonPressed == false)
         {
             isAButtonPressed = true;
-            if(isTransparent == 0)
+            Invoke("SetAKeyCoolTime", GoggleCoolTime);
+            if (isTransparent == 0)
+            {
                 isTransparent = 1;
+                goggleScript.GoggleOn();
+                audioSource.PlayOneShot(GoggleOnSounds.GetRandom());
+            }
             else
+            {
                 isTransparent = 0;
-            GameManager.PaintTransparent(isTransparent);
-        }
-        if(isAButtonPressed == true && ChangePaintValue < 0.1f)
-        {
-            isAButtonPressed = false;
+                goggleScript.GoggleOff();
+                audioSource.PlayOneShot(GoggleOffSounds.GetRandom());
+            }
+            Invoke("MakeTransparent", 0.2f);
         }
 
         if (isCoolTime || currentBulletCount == 0)
@@ -104,6 +116,7 @@ public class HandInteractions : MonoBehaviour
         }
         if (ChargeValue < 0.2f && ChargeTime != 0)
         {
+            StartCoroutine(SetCoolTime());
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
             audioSource.PlayOneShot(ShootSound.GetRandom());
             currentBulletCount--;
@@ -111,7 +124,6 @@ public class HandInteractions : MonoBehaviour
             ChargeTime = 0;
             TubeMaterial.SetFloat("_Fill", ChargeTime);
             ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation).transform.SetParent(this.gameObject.transform);
-            StartCoroutine(SetCoolTime());
             PaintBallInstance = null;
         }
     }
@@ -145,4 +157,13 @@ public class HandInteractions : MonoBehaviour
         isCoolTime = false;
     }
 
+    private void SetAKeyCoolTime()
+    {
+        isAButtonPressed = false;
+    }
+    
+    private void MakeTransparent()
+    {
+        GameManager.PaintTransparent(isTransparent);
+    }
 }
