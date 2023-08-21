@@ -20,7 +20,7 @@ public class PlayerCharacter : MonoBehaviour, IDamagable
         currentHp -= value;
         if (currentHp < 0)
         {
-            GameOverUI.Play("GameOver");
+            GameOverUI.Play("Open");
             Invoke("SpawnCharacter", 3.0f);
 
         }

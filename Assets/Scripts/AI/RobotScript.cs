@@ -82,12 +82,12 @@ public class RobotScript : MonoBehaviour, IDamagable
     public void ReadyAttackSoundPlay()
     {
         audioSource.PlayOneShot(ReadyAttackSounds.GetRandom());
-        ObjectPoolManager.SpawnObject(RobotEyeShineParticle, RobotEyeShineParticlePosition.position, RobotEyeShineParticlePosition.rotation).GetComponent<Transform>().parent = RobotEyeShineParticlePosition;
     }
 
     public void OnAttackSoundPlay()
     {
         audioSource.PlayOneShot(OnAttackSounds.GetRandom());
+        ObjectPoolManager.SpawnObject(RobotEyeShineParticle, RobotEyeShineParticlePosition.position, RobotEyeShineParticlePosition.rotation);
     }
 
 

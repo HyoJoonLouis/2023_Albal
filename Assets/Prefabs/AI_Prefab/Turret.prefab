@@ -83,7 +83,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378880413285627598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.014, y: 0.716, z: 0.242}
+  m_LocalPosition: {x: -0.014, y: 0.716, z: 0.304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 378880411331175256}
   - component: {fileID: 378880411331175259}
   - component: {fileID: 1176359909}
-  - component: {fileID: 2631362318394220806}
   m_Layer: 9
   m_Name: Turret
   m_TagString: Untagged
@@ -177,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21242bd3d773ee54eb72db3575a13461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
+  MaxHp: 60
   currentHp: 0
   RobotDestroyParticle: {fileID: 6965879628535932448, guid: 8403275c584b3964dbe2fe986e1b411c,
     type: 3}
@@ -186,8 +185,8 @@ MonoBehaviour:
   BulletSpawnLocation: {fileID: 378880413285627599}
   AttackBullet: {fileID: 7924651787570128293, guid: b9b3ddc189f8d54468aab00d4e7cf688,
     type: 3}
-  AttackCoolTime: 3
-  speed: 30
+  AttackCoolTime: 7
+  speed: 20
   OnAttackSounds:
     Sounds:
     - {fileID: 8300000, guid: bfdb736a7db3613468eaf88bae31b3b2, type: 3}
@@ -216,102 +215,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!82 &2631362318394220806
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685501982034307530}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &3933322898559909658
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,8 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89da53acf4124d4995940fea73c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterVisualRadius: 50
-  MonsterVisualAngle: 90
+  MonsterVisualRadius: 30
+  MonsterVisualAngle: 30
 --- !u!1 &6475795107707632657
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,4 +574,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 0}
-  time: 0.2
+  time: 0.15

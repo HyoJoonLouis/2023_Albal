@@ -121,8 +121,7 @@ MonoBehaviour:
   isHit: 0
   EnergyObject: {fileID: 0}
   ActivateSounds:
-    Sounds:
-    - {fileID: 8300000, guid: 3c9459c122ea8274a8900cb03e1d9f21, type: 3}
+    Sounds: []
   OnActivateSounds:
     Sounds: []
 --- !u!82 &4635219780345952910

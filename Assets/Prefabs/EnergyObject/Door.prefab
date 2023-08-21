@@ -73,12 +73,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Buttons:
   - {fileID: 278427401213084854}
-  OpenSounds:
-    Sounds:
-    - {fileID: 8300000, guid: 22a77aaf2fb192b4ca65bb630bea60b0, type: 3}
-  CloseSounds:
-    Sounds:
-    - {fileID: 8300000, guid: 22a77aaf2fb192b4ca65bb630bea60b0, type: 3}
 --- !u!82 &7194691043321460509
 AudioSource:
   m_ObjectHideFlags: 0
