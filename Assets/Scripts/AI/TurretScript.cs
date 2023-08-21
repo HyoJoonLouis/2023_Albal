@@ -32,8 +32,8 @@ public class TurretScript : MonoBehaviour, IDamagable
     public void TakeDamage(float value)
     {
         currentHp -= value;
-        audioSource.PlayOneShot(OnHitSounds.GetRandom());
         changeRenderScript.ChangeRender();
+        audioSource.PlayOneShot(OnHitSounds.GetRandom());
         if(currentHp <= 0)
         {
             GameObject.Destroy(this.gameObject);
@@ -60,7 +60,7 @@ public class TurretScript : MonoBehaviour, IDamagable
 
     IEnumerator Attack()
     {
-        if (targetDetectScript.Target && onSightDetectScript.DetectTarget(targetDetectScript.Target.transform.position))
+        if (targetDetectScript.Target != null && onSightDetectScript.DetectTarget(targetDetectScript.Target.transform.position))
         {
             TurretBulletScript bullet = ObjectPoolManager.SpawnObject(AttackBullet, transform.position, transform.rotation).GetComponent<TurretBulletScript>();
             bullet.rb.velocity = (targetDetectScript.Target.transform.position - transform.position).normalized * speed;
