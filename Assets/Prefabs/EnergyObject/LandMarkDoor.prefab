@@ -281,7 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpenSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: 99855fa0a0f9fe146a5d5e02b29afebf, type: 3}
   CloseSounds:
     Sounds: []
   OpenParticle: {fileID: 2581910698258373607, guid: ab31e2c52d180a04f9194c64f56a4432,

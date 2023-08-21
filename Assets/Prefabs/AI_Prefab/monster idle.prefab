@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89da53acf4124d4995940fea73c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterVisualRadius: 50
-  MonsterVisualAngle: 50
+  MonsterVisualRadius: 100
+  MonsterVisualAngle: 100
 --- !u!1 &461608005302930981
 GameObject:
   m_ObjectHideFlags: 0

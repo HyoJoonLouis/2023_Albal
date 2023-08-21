@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21242bd3d773ee54eb72db3575a13461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 60
+  MaxHp: 100
   currentHp: 0
   RobotDestroyParticle: {fileID: 6965879628535932448, guid: 8403275c584b3964dbe2fe986e1b411c,
     type: 3}
@@ -186,8 +186,8 @@ MonoBehaviour:
   BulletSpawnLocation: {fileID: 378880413285627599}
   AttackBullet: {fileID: 7924651787570128293, guid: b9b3ddc189f8d54468aab00d4e7cf688,
     type: 3}
-  AttackCoolTime: 7
-  speed: 20
+  AttackCoolTime: 3
+  speed: 25
   OnAttackSounds:
     Sounds:
     - {fileID: 8300000, guid: bfdb736a7db3613468eaf88bae31b3b2, type: 3}
@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89da53acf4124d4995940fea73c958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterVisualRadius: 30
-  MonsterVisualAngle: 30
+  MonsterVisualRadius: 50
+  MonsterVisualAngle: 100
 --- !u!1 &6475795107707632657
 GameObject:
   m_ObjectHideFlags: 0
