@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9077996180203513275
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -21,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Turret
-  m_Shader: {fileID: -6465566751694194690, guid: 45eaa40edf5fd6349bf8599cb8225a7f,
+  m_Shader: {fileID: -6465566751694194690, guid: d2126a98afe8d3d4cb9f685c2f2e5592,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -34,19 +21,19 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_22d123b8bc3d43dcb3663979203eadbd_Texture_1:
+    - _Base_Map:
         m_Texture: {fileID: 2800000, guid: 81a932366bb68194f907fb99b4288525, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_4ee145b59b104c1fbb4cd9cac704b46e_Texture_1:
+    - _Emmisive_Map:
         m_Texture: {fileID: 2800000, guid: f779f915459bf6b4d86ff434cab3fa1c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_646af92b737847718f19ca9be99de552_Texture_1:
+    - _Metalic_Map:
         m_Texture: {fileID: 2800000, guid: ae027dce5d35b644db4554ba5f2b7f09, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_a5f7f825d63949a69bd9344801b4c9e5_Texture_1:
+    - _Normal_Map:
         m_Texture: {fileID: 2800000, guid: c9ffb37d0e673bf4d8ffc34bf098fd8c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -64,8 +51,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Emmisive: 0
     - _Lerp: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    m_Colors:
+    - _EmmisiveColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &1672189376572262504
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

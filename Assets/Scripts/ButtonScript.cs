@@ -7,6 +7,7 @@ public class ButtonScript : MonoBehaviour, IPaintable
 {
     [SerializeField] float DeactivateTime;
     [SerializeField] GameObject ActivateParticle;
+    [SerializeField] Transform ActivateParticlePosition;
     GameObject activateParticle;
     [SerializeField] GameObject SparkParticle;
 
@@ -20,6 +21,8 @@ public class ButtonScript : MonoBehaviour, IPaintable
     AudioSource audioSource;
     [SerializeField] RandomSounds<AudioClip> ActivateSounds;
     [SerializeField] RandomSounds<AudioClip> OnActivateSounds;
+
+
 
     public void Awake()
     {
@@ -36,7 +39,7 @@ public class ButtonScript : MonoBehaviour, IPaintable
         audioSource.PlayOneShot(ActivateSounds.GetRandom());
         audioSource.clip = OnActivateSounds.GetRandom();
         audioSource.Play();
-        activateParticle = ObjectPoolManager.SpawnObject(ActivateParticle, this.transform.position, this.transform.rotation);
+        activateParticle = ObjectPoolManager.SpawnObject(ActivateParticle, ActivateParticlePosition.transform.position, ActivateParticlePosition.transform.rotation);
         this.GetComponent<Renderer>().material = ActivateMaterial;
         Invoke("Deactivate", DeactivateTime);
         if (EnergyObject.CheckButtonsHit())

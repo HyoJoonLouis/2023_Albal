@@ -257,8 +257,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24572581, y: 0.6133348, z: 0.3368105}
-  m_Center: {x: -0.0170408, y: 0.19333287, z: 0.012756325}
+  m_Size: {x: 0.24572581, y: 0.74947953, z: 0.5038319}
+  m_Center: {x: -0.017039685, y: 0.12526038, z: -0.012272094}
 --- !u!114 &5269087837974004449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,6 +592,8 @@ MonoBehaviour:
   Distance: 2
   RightHandCollider: {fileID: 5269087837974004450}
   changeRenderScript: {fileID: 768413263288335862}
+  AfterSound: {fileID: 927780434342575453, guid: de70d27ff5562fe489da46725cb3e982,
+    type: 3}
 --- !u!65 &5269087838246622504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -651,10 +653,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -786,7 +788,7 @@ Transform:
   m_GameObject: {fileID: 5269087837940398367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00000059605, y: -0.0000002861, z: -1.2266}
-  m_LocalScale: {x: 2.6054318, y: 2.6054318, z: 2.6054318}
+  m_LocalScale: {x: 3.3422477, y: 3.3422477, z: 3.3422477}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5662491505325839430}
@@ -803,8 +805,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10.763974
-  m_Center: {x: -0.000000007207324, y: 0, z: 0.7639751}
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0.7639751}
 --- !u!114 &5269087837940398362
 MonoBehaviour:
   m_ObjectHideFlags: 0

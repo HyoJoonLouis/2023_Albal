@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class StartSceneManager : MonoBehaviour
 {
+
+    [SerializeField] Animator animator;
     public void OnStartButton()
     {
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
-        asyncOperation.allowSceneActivation = true;
-
+        animator.Play("FadeIn");
     }
 
     public void OnOptionButton()
@@ -21,4 +21,5 @@ public class StartSceneManager : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

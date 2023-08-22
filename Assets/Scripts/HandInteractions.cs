@@ -31,6 +31,8 @@ public class HandInteractions : MonoBehaviour
     [Header("Right Hand Shake")]
     [SerializeField] float ShakeThreshold;
     [SerializeField] int ShakeAmount;
+    [SerializeField] float ShakeCoolTime;
+    bool isShakeCoolTime;
     Vector3 PreviousRightHandPosition;
     int CountShake;
 
@@ -63,12 +65,14 @@ public class HandInteractions : MonoBehaviour
         ChargeTime = 0;
         currentPaintIndex = 0;
         currentBulletCount = MaxBulletCount;
-        PreviousRightHandPosition = RightHand.transform.position;
+        PreviousRightHandPosition = RightHand.transform.localPosition;
         CountShake = 0;
         isTransparent = 0;
         AmmoMaterial = GameObject.Find("Sphere002").GetComponent<Renderer>().material;
         TubeMaterial = GameObject.Find("Tube002").GetComponent<Renderer>().material;
         audioSource = GetComponent<AudioSource>();
+
+        StartCoroutine("HandShakeDetect");
     }
 
     // Update is called once per frame
@@ -105,16 +109,16 @@ public class HandInteractions : MonoBehaviour
             PaintBallInstance.SetBounce(1);
         }
 
-        if (ChargeValue > 0.8f && ChargeTime == 0)
+        if (ChargeValue > 0.8f && ChargeTime == 0 && Time.timeScale == 1.0f)
         {
             PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, -9999, -9999), this.transform.rotation).GetComponent<PaintBall>();
         }
-        if (ChargeValue > 0.8f)
+        if (ChargeValue > 0.8f && Time.timeScale == 1.0f)
         {
             ChargeTime = Mathf.Clamp(ChargeTime += Time.unscaledDeltaTime, 0, MaxChargeTime);
             TubeMaterial.SetFloat("_Fill", ChargeTime / MaxChargeTime);
         }
-        if (ChargeValue < 0.2f && ChargeTime != 0)
+        if (ChargeValue < 0.2f && ChargeTime != 0 && PaintBallInstance != null)
         {
             StartCoroutine(SetCoolTime());
             PaintBallInstance.Init(BulletBasicSpeed + (BulletIncreaseSpeed * ChargeTime), ShootPosition.forward, ShootPosition.position);
@@ -130,7 +134,7 @@ public class HandInteractions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(RightHand.transform.position, PreviousRightHandPosition) >= ShakeThreshold)
+/*        if (Mathf.Abs(RightHand.transform.localPosition.y - PreviousRightHandPosition.y) >= ShakeThreshold)
         {
             CountShake++;
         }
@@ -144,7 +148,32 @@ public class HandInteractions : MonoBehaviour
             AmmoMaterial.SetFloat("_Fill", 1);
             audioSource.PlayOneShot(ReloadSound.GetRandom());
         }
-        PreviousRightHandPosition = RightHand.transform.position;
+        PreviousRightHandPosition = RightHand.transform.localPosition;*/
+    }
+    
+    IEnumerator HandShakeDetect()
+    {
+        if (!isShakeCoolTime)
+        {
+            if (Mathf.Abs(RightHand.transform.localPosition.y - PreviousRightHandPosition.y) >= ShakeThreshold)
+            {
+                CountShake++;
+            }
+            else
+                CountShake = 0;
+
+            if (CountShake > ShakeAmount)
+            {
+                CountShake = 0;
+                StartCoroutine("SetShakeCoolTime");
+                currentBulletCount = MaxBulletCount;
+                AmmoMaterial.SetFloat("_Fill", 1);
+                audioSource.PlayOneShot(ReloadSound.GetRandom());
+            }
+            PreviousRightHandPosition = RightHand.transform.localPosition;
+        }
+        yield return new WaitForSeconds(0.005f);
+        StartCoroutine("HandShakeDetect");
     }
 
     IEnumerator SetCoolTime()
@@ -155,6 +184,13 @@ public class HandInteractions : MonoBehaviour
         yield return new WaitForSecondsRealtime(CoolTime);
         animator.Play("Idle");
         isCoolTime = false;
+    }
+
+    IEnumerator SetShakeCoolTime()
+    {
+        isShakeCoolTime = true;
+        yield return new WaitForSeconds(ShakeCoolTime);
+        isShakeCoolTime = false;
     }
 
     private void SetAKeyCoolTime()

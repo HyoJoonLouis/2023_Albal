@@ -9,6 +9,7 @@ public class DoorScript : EnergyObject
 
     Animator animator;
     AudioSource audioSource;
+    bool Activated;
 
     public void Start()
     {
@@ -19,11 +20,17 @@ public class DoorScript : EnergyObject
 
     public override void Activate()
     {
+        if (Activated)
+            return;
+        Activated  = true;
         animator.Play("Open");
         audioSource.PlayOneShot(OpenSounds.GetRandom());
     }
     public override void Deactivate()
     {
+        if (!Activated)
+            return;
+        Activated  = false;
         animator.Play("Close");
         audioSource.PlayOneShot(CloseSounds.GetRandom());
     }

@@ -5,14 +5,14 @@ using UnityEngine;
 public class ChangeRenderScript : MonoBehaviour
 {
     [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
-    [SerializeField] float time;
+    [SerializeField] protected float time;
     
     void Awake()
     {
         skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();        
     }
 
-    public void ChangeRender()
+    public virtual void ChangeRender()
     {
         StartCoroutine("ChangeRenderCoroutine");
     }

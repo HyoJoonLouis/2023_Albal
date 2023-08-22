@@ -6,12 +6,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+    public PlayerCharacter Player;
     private static Paintable[] paintables;
 
 
-    void Start()
+    void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+
         paintables = FindObjectsOfType<Paintable>();
+        Player = FindObjectOfType<PlayerCharacter>();
     }
 
     public static void PaintTransparent(int isTransparent)

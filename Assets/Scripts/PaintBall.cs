@@ -32,10 +32,8 @@ public class PaintBall : MonoBehaviour
     {
         Bounce = 0;
         rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0,0,0);
         audioSource = GetComponent<AudioSource>();
-
-        SpawnedTrail = ObjectPoolManager.SpawnObject(TrailParticle, this.transform.position, this.transform.rotation);
-        SpawnedTrail.transform.SetParent(this.transform);
     }
 
     public void Init(float speed, Vector3 direction, Vector3 position)
@@ -44,6 +42,8 @@ public class PaintBall : MonoBehaviour
 /*        rb.velocity = new Vector3(0, 0, 0);
         rb.AddForce(Speed * Direction, ForceMode.Impulse);*/
         rb.velocity = speed * direction.normalized;
+        SpawnedTrail = ObjectPoolManager.SpawnObject(TrailParticle, this.transform.position, this.transform.rotation);
+        SpawnedTrail.transform.SetParent(this.transform);
     }
     
     public void SetBounce(int value)
@@ -70,6 +70,7 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
+        Debug.Log(collision.transform.name);
         ObjectPoolManager.SpawnObject(SplashDamageObject, this.transform.position, this.transform.rotation);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         ObjectPoolManager.SpawnObject(BulletSoundInstance, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(ExplodeSound.GetRandom());
@@ -82,7 +83,7 @@ public class PaintBall : MonoBehaviour
         }
 
         Ray ray = new Ray(collision.contacts[0].point + collision.contacts[0].normal, -collision.contacts[0].normal);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Paintable")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 1.1f, 1 << LayerMask.NameToLayer("Paintable")))
         {
             Debug.Log(hit.textureCoord);
             hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush[Random.Range(0, PaintBrush.Length)]);

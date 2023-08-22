@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4344354411674953490}
   - component: {fileID: 4344354411674953491}
   - component: {fileID: 4344354411674953489}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: SplashDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

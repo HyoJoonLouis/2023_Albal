@@ -13,7 +13,6 @@ public class TurretBulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
         ObjectPoolManager.ReturnObjectToPool(this.gameObject);
         IDamagable damagable = collision.transform.GetComponent<IDamagable>();
         if (damagable != null)

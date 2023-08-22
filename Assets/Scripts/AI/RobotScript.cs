@@ -7,6 +7,9 @@ using UnityEngine.AI;
 
 public class RobotScript : MonoBehaviour, IDamagable
 {
+    Vector3 initialPosition;
+    Quaternion initialRotation;
+
     [Header("Properties")]
     [SerializeField] float MaxHp;
     [SerializeField] float currentHp;
@@ -25,6 +28,7 @@ public class RobotScript : MonoBehaviour, IDamagable
     [SerializeField] float Distance;
     [SerializeField] Collider RightHandCollider;
     [SerializeField] ChangeRenderScript changeRenderScript;
+    [SerializeField] GameObject AfterSound;
 
     RobotStates state;
     NavMeshAgent agent;
@@ -33,8 +37,11 @@ public class RobotScript : MonoBehaviour, IDamagable
     OnSightDetectScript onSightDetectScript;
     AudioSource audioSource;
 
-    private void Awake()
+    private void Start()
     {
+        initialPosition = this.transform.position;
+        initialRotation = this.transform.rotation;
+        GameManager.Instance.Player.DieDelegate += SetToInitialPosition;
         currentHp = MaxHp;
         state = new RobotStates();
         agent = GetComponent<NavMeshAgent>();
@@ -42,6 +49,8 @@ public class RobotScript : MonoBehaviour, IDamagable
         animator = GetComponent<Animator>();
         onSightDetectScript = GetComponentInChildren<OnSightDetectScript>();
         audioSource = GetComponent<AudioSource>();
+
+        state.ChangeState(RobotState.watching, animator, agent, Vector3.zero);
     }
 
     public void Update()
@@ -90,7 +99,16 @@ public class RobotScript : MonoBehaviour, IDamagable
         audioSource.PlayOneShot(OnAttackSounds.GetRandom());
     }
 
+    public void OnDied()
+    {
+    }
 
+    public void SetToInitialPosition()
+    {
+        this.transform.position = initialPosition;
+        this.transform.rotation = initialRotation;
+        state.ChangeState(RobotState.watching, animator, agent, Vector3.zero);
+    }
     public void TakeDamage(float value)
     {
         currentHp -= value;
@@ -98,9 +116,11 @@ public class RobotScript : MonoBehaviour, IDamagable
         audioSource.PlayOneShot(OnHitSounds.GetRandom());
         if(currentHp <= 0)
         {
+            GameManager.Instance.Player.DieDelegate -= SetToInitialPosition;
             state.ChangeState(RobotState.die, animator, agent, Vector3.zero);
             ObjectPoolManager.SpawnObject(RobotDestroyParticle, RobotDestroyParticlePosition.position, RobotDestroyParticlePosition.rotation);
-            audioSource.PlayOneShot(OnDieSounds.GetRandom());
+            Destroy(this.gameObject);
+            ObjectPoolManager.SpawnObject(AfterSound, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(OnDieSounds.GetRandom());
         }
     }
 }

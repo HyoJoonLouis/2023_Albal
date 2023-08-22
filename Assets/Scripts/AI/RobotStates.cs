@@ -32,6 +32,7 @@ public class RobotStates
     {
         if (state == RobotState.watching)
         {
+            animator.SetBool("AttackToRun", false);
             animator.Play("Watching");
             agent.enabled = false;
             IsDetected = false;
@@ -52,7 +53,7 @@ public class RobotStates
 
         else if (state == RobotState.die)
         {
-            GameObject.Destroy(animator.gameObject);
+            animator.Play("Dead");
         }
     }
 

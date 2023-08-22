@@ -83,7 +83,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378880413285627598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.014, y: 0.716, z: 0.304}
+  m_LocalPosition: {x: -0.0135, y: 0.716, z: 0.261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,12 +186,11 @@ MonoBehaviour:
   BulletSpawnLocation: {fileID: 378880413285627599}
   AttackBullet: {fileID: 7924651787570128293, guid: b9b3ddc189f8d54468aab00d4e7cf688,
     type: 3}
-  AttackCoolTime: 3
-  speed: 25
+  AttackCoolTime: 2
+  speed: 30
   OnAttackSounds:
     Sounds:
     - {fileID: 8300000, guid: bfdb736a7db3613468eaf88bae31b3b2, type: 3}
-    - {fileID: 8300000, guid: 93307ff34ee9d4641ba8bff3dfefbae9, type: 3}
   OnHitSounds:
     Sounds:
     - {fileID: 8300000, guid: 573ad5555491f224e8c12b133cb5880e, type: 3}
@@ -200,6 +199,8 @@ MonoBehaviour:
     Sounds:
     - {fileID: 8300000, guid: 94fc000f248c6e44b8bd27784819a2c4, type: 3}
     - {fileID: 8300000, guid: 3644d974d024b774f83b6de0412a9c12, type: 3}
+  AfterSound: {fileID: 927780434342575453, guid: de70d27ff5562fe489da46725cb3e982,
+    type: 3}
 --- !u!54 &1176359909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -236,7 +237,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 8.330701
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -621,7 +622,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 39ec334dbfcecd847ae3c6c75d42ec99, type: 2}
+  - {fileID: 2100000, guid: 7f2942bfefd77de4ea71e96641465827, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

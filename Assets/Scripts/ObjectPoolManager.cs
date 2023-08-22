@@ -26,10 +26,10 @@ public class ObjectPoolManager : MonoBehaviour
         }
         else
         {
-            spawnableObj.transform.position = spawnPosition;
-            spawnableObj.transform.rotation = spawnRotation;
             pool.InactiveObject.Remove(spawnableObj);
             spawnableObj.SetActive(true);
+            spawnableObj.transform.position = spawnPosition;
+            spawnableObj.transform.rotation = spawnRotation;
         }
         return spawnableObj;
     }

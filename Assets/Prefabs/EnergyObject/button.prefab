@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6217869503610915579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7343698460028784949}
+  m_Layer: 0
+  m_Name: ParticlePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7343698460028784949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217869503610915579}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6103110094661159640}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &6915641059805581410
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +63,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7343698460028784949}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,8 +129,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.34712753, y: 0.35520858, z: 0.08031207}
+  m_Center: {x: -0.0010103583, y: 0.001010577, z: 0.07377558}
 --- !u!114 &5996581622434786574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +146,7 @@ MonoBehaviour:
   DeactivateTime: 3
   ActivateParticle: {fileID: 1328311281927297575, guid: 9f7025a2b55e36e45b9d344e32cf5ac4,
     type: 3}
+  ActivateParticlePosition: {fileID: 7343698460028784949}
   SparkParticle: {fileID: 6679152791886684864, guid: 69be7b81a52eca64b81cebc40fac1785,
     type: 3}
   ActivateMaterial: {fileID: 2100000, guid: 8515fdb8fb2f08d43a2838af63adfc60, type: 2}
@@ -121,9 +154,11 @@ MonoBehaviour:
   isHit: 0
   EnergyObject: {fileID: 0}
   ActivateSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: 3c9459c122ea8274a8900cb03e1d9f21, type: 3}
   OnActivateSounds:
-    Sounds: []
+    Sounds:
+    - {fileID: 8300000, guid: 105e5ee81cc89564c91a4068fd976add, type: 3}
 --- !u!82 &4635219780345952910
 AudioSource:
   m_ObjectHideFlags: 0
