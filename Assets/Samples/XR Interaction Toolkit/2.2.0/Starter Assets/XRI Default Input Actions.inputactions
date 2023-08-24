@@ -390,7 +390,7 @@
                 {
                     "name": "",
                     "id": "c170c1e8-8c71-4053-a8a8-8fb06506bdb7",
-                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/primarybutton",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -401,7 +401,7 @@
                 {
                     "name": "",
                     "id": "4e5206ab-e389-49f6-a240-b5e4c9fe581b",
-                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/secondarybutton",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -920,7 +920,7 @@
                 {
                     "name": "",
                     "id": "9658634a-81e3-4d7e-b181-8888ed1fbb0e",
-                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{RightHand}/primarybutton",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -931,7 +931,7 @@
                 {
                     "name": "",
                     "id": "00cee144-4134-46da-ba0e-d79559a00cb7",
-                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{RightHand}/secondarybutton",
+                    "path": "<XRController>{RightHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
