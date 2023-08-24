@@ -46,8 +46,8 @@ public class ObjectPoolManager : MonoBehaviour
         }
         else
         {
-            obj.SetActive(false);
             pool.InactiveObject.Add(obj);
+            obj.SetActive(false);
         }
     }
 }
