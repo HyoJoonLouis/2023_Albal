@@ -70,12 +70,9 @@ public class PaintBall : MonoBehaviour
             return;
         }
 
-        Debug.Log(collision.transform.name);
         ObjectPoolManager.SpawnObject(SplashDamageObject, this.transform.position, this.transform.rotation);
         ObjectPoolManager.SpawnObject(HitParticle, transform.position, transform.rotation);
         ObjectPoolManager.SpawnObject(BulletSoundInstance, transform.position, transform.rotation).GetComponent<BulletSound>().PlaySound(ExplodeSound.GetRandom());
-        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
-        
         IPaintable paintable = collision.transform.GetComponent<IPaintable>();
         if (paintable != null)
         {
@@ -88,5 +85,6 @@ public class PaintBall : MonoBehaviour
             Debug.Log(hit.textureCoord);
             hit.transform.GetComponent<Paintable>().Paint(hit.textureCoord, PaintBrush[Random.Range(0, PaintBrush.Length)]);
         }
+        ObjectPoolManager.ReturnObjectToPool(this.gameObject);
     }    
 }

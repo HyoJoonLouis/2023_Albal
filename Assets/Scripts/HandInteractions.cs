@@ -109,7 +109,7 @@ public class HandInteractions : MonoBehaviour
             PaintBallInstance.SetBounce(1);
         }
 
-        if (ChargeValue > 0.8f && ChargeTime == 0 && Time.timeScale == 1.0f)
+        if (ChargeValue > 0.8f && ChargeTime == 0 && Time.timeScale == 1.0f && PaintBallInstance == null)
         {
             PaintBallInstance = ObjectPoolManager.SpawnObject(PaintBall[currentPaintIndex % PaintBall.Count], new Vector3(-9999, -9999, -9999), this.transform.rotation).GetComponent<PaintBall>();
         }
@@ -130,25 +130,6 @@ public class HandInteractions : MonoBehaviour
             ObjectPoolManager.SpawnObject(ShootParticle, ShootPosition.position, ShootPosition.rotation).transform.SetParent(this.gameObject.transform);
             PaintBallInstance = null;
         }
-    }
-
-    private void FixedUpdate()
-    {
-/*        if (Mathf.Abs(RightHand.transform.localPosition.y - PreviousRightHandPosition.y) >= ShakeThreshold)
-        {
-            CountShake++;
-        }
-        else
-            CountShake = 0;
-        
-        if(CountShake > ShakeAmount)
-        {
-            CountShake = 0;
-            currentBulletCount = MaxBulletCount;
-            AmmoMaterial.SetFloat("_Fill", 1);
-            audioSource.PlayOneShot(ReloadSound.GetRandom());
-        }
-        PreviousRightHandPosition = RightHand.transform.localPosition;*/
     }
     
     IEnumerator HandShakeDetect()
